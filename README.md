@@ -25,7 +25,7 @@ adb install -r QuizRx-OBE-arm64-debug.apk
 ## 构建
 
 安装 Node.js、pnpm、Rust、Android Studio/SDK/NDK，并为 Rust 添加 `aarch64-linux-android`。
-从新版 Release 下载 `quizbank.db` 放到仓库根目录，并复制到 `quizrx/src-tauri/gen/android/app/src/main/assets/quizbank.db`。
+新版 APK 是 ZIP 格式：从其 `assets/quizbank.db` 提取内置数据库放到仓库根目录，并复制到 `quizrx/src-tauri/gen/android/app/src/main/assets/quizbank.db`。
 进入 `quizrx`，运行 `pnpm install` 和 `scripts/build-android.ps1`。工具链位置可通过该脚本参数指定，详情见 `quizrx/README.md`。
 
 ## 增量导入与检查
@@ -41,3 +41,4 @@ node scripts/test-android-back.mjs
 ```
 
 增量发布生成原库备份和记录，默认演练不修改主库。新题结构、五选项、章节数量、来源及旧库保留校验记录位于 `validation/`。
+
