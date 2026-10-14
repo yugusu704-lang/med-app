@@ -1,0 +1,4418 @@
+{
+  "version": 2,
+  "id": "quizrx-mobile-neo-v1",
+  "name": "医学题库 · Android · 新野兽派",
+  "theme": "nordic",
+  "design": {
+    "id": "neo-brutalism",
+    "title": "Neo-Brutalism (新野兽派)",
+    "sourcePath": "01-风格库/01-现代极简与数字科技/01. Neo-Brutalism.md",
+    "sourceHash": "819aca9423f8d8775a21b299f70ced3915f3552f2a042804465ef7f5d35aa0df",
+    "parserVersion": 2,
+    "tokens": {
+      "background": "#FFFBEB",
+      "surface": "#FFFFFF",
+      "text": "#000000",
+      "muted": "#000000",
+      "primary": "#FFE600",
+      "primaryText": "#000000",
+      "borderColor": "#000000",
+      "borderWidth": 3,
+      "radius": 14,
+      "shadow": "4px 4px 0px #000000",
+      "fontFamily": "'Inter', sans-serif",
+      "headingFontFamily": "'Inter', sans-serif",
+      "pressOffset": 2,
+      "pressScale": 0.98
+    },
+    "appearance": {
+      "background": {
+        "type": "solid"
+      },
+      "surfaceOpacity": 1,
+      "blur": 0,
+      "saturation": 100,
+      "shadows": [
+        {
+          "inset": false,
+          "x": 4,
+          "y": 4,
+          "blur": 0,
+          "spread": 0,
+          "color": "#000000",
+          "opacity": 1
+        }
+      ],
+      "pattern": "none",
+      "geometry": "square",
+      "typography": {
+        "scale": 1,
+        "lineHeight": 1.5,
+        "letterSpacing": 0
+      },
+      "motion": "mechanical"
+    }
+  },
+  "pages": [
+    {
+      "id": "home",
+      "name": "首页",
+      "nodes": [
+        {
+          "id": "rx-3",
+          "type": "row",
+          "props": {},
+          "style": {
+            "gap": 12,
+            "alignItems": "center",
+            "justifyContent": "space-between",
+            "minHeight": 42
+          },
+          "children": [
+            {
+              "id": "rx-1",
+              "type": "text",
+              "props": {
+                "text": "QUIZ / RX",
+                "variant": "body"
+              },
+              "style": {
+                "fontSize": 20,
+                "fontWeight": 900
+              }
+            },
+            {
+              "id": "rx-2",
+              "type": "badge",
+              "props": {
+                "text": "离线可用"
+              },
+              "style": {
+                "background": "#FFFFFF",
+                "color": "#000000",
+                "fontWeight": 800,
+                "fontSize": 12,
+                "padding": "5px 10px",
+                "borderRadius": 6
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-8",
+          "type": "card",
+          "props": {},
+          "style": {
+            "background": "#FFE600",
+            "padding": 20,
+            "gap": 12,
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 12,
+            "boxShadow": "4px 4px 0px #000000"
+          },
+          "children": [
+            {
+              "id": "rx-4",
+              "type": "text",
+              "props": {
+                "text": "医学题库 · 随时开练",
+                "variant": "eyebrow"
+              },
+              "style": {
+                "fontSize": 12,
+                "fontWeight": 800
+              }
+            },
+            {
+              "id": "rx-5",
+              "type": "text",
+              "props": {
+                "text": "把知识，\n练成直觉。",
+                "variant": "heading"
+              },
+              "style": {
+                "fontSize": 36,
+                "fontWeight": 900
+              }
+            },
+            {
+              "id": "rx-6",
+              "type": "text",
+              "props": {
+                "text": "每天一小组，慢慢把难点练熟。",
+                "variant": "body"
+              },
+              "style": {
+                "fontSize": 14,
+                "fontWeight": 500
+              }
+            },
+            {
+              "id": "rx-7",
+              "type": "button",
+              "props": {
+                "label": "开始刷题  →"
+              },
+              "style": {
+                "background": "#000000",
+                "color": "#FFFFFF",
+                "fontSize": 16,
+                "fontWeight": 800,
+                "minHeight": 52,
+                "padding": "12px 14px",
+                "borderWidth": 3,
+                "borderColor": "#000000",
+                "borderRadius": 10,
+                "boxShadow": "3px 3px 0px #FFFFFF"
+              },
+              "action": {
+                "type": "navigate",
+                "target": "setup"
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-18",
+          "type": "grid",
+          "props": {},
+          "style": {
+            "gridTemplateColumns": "repeat(3,minmax(0,1fr))",
+            "gap": 10
+          },
+          "children": [
+            {
+              "id": "rx-11",
+              "type": "card",
+              "props": {},
+              "style": {
+                "background": "#FFFFFF",
+                "padding": 10,
+                "gap": 2,
+                "borderWidth": 3,
+                "borderColor": "#000000",
+                "borderRadius": 12,
+                "boxShadow": "3px 3px 0px #000000"
+              },
+              "children": [
+                {
+                  "id": "rx-9",
+                  "type": "text",
+                  "props": {
+                    "text": "51,281",
+                    "variant": "body"
+                  },
+                  "style": {
+                    "fontSize": 22,
+                    "fontWeight": 900
+                  }
+                },
+                {
+                  "id": "rx-10",
+                  "type": "text",
+                  "props": {
+                    "text": "道题目",
+                    "variant": "body"
+                  },
+                  "style": {
+                    "fontSize": 12,
+                    "fontWeight": 600
+                  }
+                }
+              ]
+            },
+            {
+              "id": "rx-14",
+              "type": "card",
+              "props": {},
+              "style": {
+                "background": "#4DEEEA",
+                "padding": 10,
+                "gap": 2,
+                "borderWidth": 3,
+                "borderColor": "#000000",
+                "borderRadius": 12,
+                "boxShadow": "3px 3px 0px #000000"
+              },
+              "children": [
+                {
+                  "id": "rx-12",
+                  "type": "text",
+                  "props": {
+                    "text": "34",
+                    "variant": "body"
+                  },
+                  "style": {
+                    "fontSize": 26,
+                    "fontWeight": 900
+                  }
+                },
+                {
+                  "id": "rx-13",
+                  "type": "text",
+                  "props": {
+                    "text": "个科目",
+                    "variant": "body"
+                  },
+                  "style": {
+                    "fontSize": 12,
+                    "fontWeight": 600
+                  }
+                }
+              ]
+            },
+            {
+              "id": "rx-17",
+              "type": "card",
+              "props": {},
+              "style": {
+                "background": "#FF5E7E",
+                "padding": 10,
+                "gap": 2,
+                "borderWidth": 3,
+                "borderColor": "#000000",
+                "borderRadius": 12,
+                "boxShadow": "3px 3px 0px #000000"
+              },
+              "children": [
+                {
+                  "id": "rx-15",
+                  "type": "text",
+                  "props": {
+                    "text": "900",
+                    "variant": "body"
+                  },
+                  "style": {
+                    "fontSize": 26,
+                    "fontWeight": 900
+                  }
+                },
+                {
+                  "id": "rx-16",
+                  "type": "text",
+                  "props": {
+                    "text": "个章节",
+                    "variant": "body"
+                  },
+                  "style": {
+                    "fontSize": 12,
+                    "fontWeight": 600
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "rx-21",
+          "type": "grid",
+          "props": {},
+          "style": {
+            "gridTemplateColumns": "repeat(2,minmax(0,1fr))",
+            "gap": 10
+          },
+          "children": [
+            {
+              "id": "rx-19",
+              "type": "button",
+              "props": {
+                "label": "浏览科目"
+              },
+              "style": {
+                "background": "#4DEEEA",
+                "color": "#000000",
+                "fontSize": 16,
+                "fontWeight": 800,
+                "minHeight": 52,
+                "padding": "12px 14px",
+                "borderWidth": 3,
+                "borderColor": "#000000",
+                "borderRadius": 10,
+                "boxShadow": "2px 2px 0px #000000"
+              },
+              "action": {
+                "type": "navigate",
+                "target": "subjects"
+              }
+            },
+            {
+              "id": "rx-20",
+              "type": "button",
+              "props": {
+                "label": "搜索题目"
+              },
+              "style": {
+                "background": "#FF5E7E",
+                "color": "#000000",
+                "fontSize": 16,
+                "fontWeight": 800,
+                "minHeight": 52,
+                "padding": "12px 14px",
+                "borderWidth": 3,
+                "borderColor": "#000000",
+                "borderRadius": 10,
+                "boxShadow": "2px 2px 0px #000000"
+              },
+              "action": {
+                "type": "navigate",
+                "target": "search"
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-24",
+          "type": "row",
+          "props": {},
+          "style": {
+            "gap": 12,
+            "alignItems": "center",
+            "justifyContent": "space-between"
+          },
+          "children": [
+            {
+              "id": "rx-22",
+              "type": "text",
+              "props": {
+                "text": "先从熟悉的科目开始",
+                "variant": "body"
+              },
+              "style": {
+                "fontSize": 18,
+                "fontWeight": 900
+              }
+            },
+            {
+              "id": "rx-23",
+              "type": "text",
+              "props": {
+                "text": "热门科目",
+                "variant": "body"
+              },
+              "style": {
+                "fontSize": 12,
+                "fontWeight": 700
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-25",
+          "type": "button",
+          "props": {
+            "label": "生理学   ·   3,976 题   →"
+          },
+          "style": {
+            "background": "#FFFFFF",
+            "color": "#000000",
+            "fontSize": 15,
+            "fontWeight": 800,
+            "minHeight": 58,
+            "padding": "12px 14px",
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 10,
+            "boxShadow": "3px 3px 0px #000000",
+            "textAlign": "left"
+          },
+          "action": {
+            "type": "navigate",
+            "target": "setup"
+          }
+        },
+        {
+          "id": "rx-26",
+          "type": "button",
+          "props": {
+            "label": "内科学   ·   8,246 题   →"
+          },
+          "style": {
+            "background": "#FFFFFF",
+            "color": "#000000",
+            "fontSize": 15,
+            "fontWeight": 800,
+            "minHeight": 58,
+            "padding": "12px 14px",
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 10,
+            "boxShadow": "3px 3px 0px #000000",
+            "textAlign": "left"
+          },
+          "action": {
+            "type": "navigate",
+            "target": "setup"
+          }
+        },
+        {
+          "id": "rx-27",
+          "type": "bottomnav",
+          "props": {
+            "label": "主导航",
+            "options": "首页|刷题|科目|搜索",
+            "pageTargets": "home|setup|subjects|search",
+            "placement": "fixed"
+          },
+          "style": {
+            "minHeight": 74,
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 10,
+            "boxShadow": "3px 3px 0px #000000",
+            "padding": "8px 12px 11px",
+            "gap": 10,
+            "fontSize": 12,
+            "fontWeight": 800,
+            "background": "#FFFBEB"
+          }
+        }
+      ]
+    },
+    {
+      "id": "subjects",
+      "name": "科目地图",
+      "nodes": [
+        {
+          "id": "rx-28",
+          "type": "navbar",
+          "props": {
+            "title": "科目地图",
+            "back": false
+          },
+          "style": {
+            "padding": 0,
+            "minHeight": 48,
+            "fontWeight": 900
+          }
+        },
+        {
+          "id": "rx-31",
+          "type": "stack",
+          "props": {},
+          "style": {
+            "gap": 6
+          },
+          "children": [
+            {
+              "id": "rx-29",
+              "type": "text",
+              "props": {
+                "text": "你的知识地图",
+                "variant": "heading"
+              },
+              "style": {
+                "fontSize": 28,
+                "fontWeight": 900
+              }
+            },
+            {
+              "id": "rx-30",
+              "type": "text",
+              "props": {
+                "text": "34 个科目，从想练的那一科开始。",
+                "variant": "body"
+              },
+              "style": {
+                "fontSize": 14,
+                "fontWeight": 500
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-32",
+          "type": "search",
+          "props": {
+            "label": "搜索科目",
+            "placeholder": "找到你想练的科目",
+            "value": ""
+          },
+          "style": {
+            "fontSize": 16,
+            "minHeight": 52,
+            "borderWidth": 3,
+            "boxShadow": "3px 3px 0px #000000"
+          }
+        },
+        {
+          "id": "rx-33",
+          "type": "badge",
+          "props": {
+            "text": "全部科目 · 按题量排列"
+          },
+          "style": {
+            "background": "#FFE600",
+            "color": "#000000",
+            "fontWeight": 800,
+            "fontSize": 12,
+            "padding": "5px 10px",
+            "borderRadius": 6
+          }
+        },
+        {
+          "id": "rx-38",
+          "type": "card",
+          "props": {},
+          "style": {
+            "background": "#FFFFFF",
+            "padding": 14,
+            "gap": 10,
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 12,
+            "boxShadow": "4px 4px 0px #000000"
+          },
+          "children": [
+            {
+              "id": "rx-36",
+              "type": "row",
+              "props": {},
+              "style": {
+                "gap": 12,
+                "alignItems": "center",
+                "justifyContent": "space-between"
+              },
+              "children": [
+                {
+                  "id": "rx-34",
+                  "type": "text",
+                  "props": {
+                    "text": "内科学",
+                    "variant": "body"
+                  },
+                  "style": {
+                    "fontSize": 20,
+                    "fontWeight": 900
+                  }
+                },
+                {
+                  "id": "rx-35",
+                  "type": "badge",
+                  "props": {
+                    "text": "8,246 题"
+                  },
+                  "style": {
+                    "background": "#4DEEEA",
+                    "color": "#000000",
+                    "fontWeight": 800,
+                    "fontSize": 12,
+                    "padding": "5px 10px",
+                    "borderRadius": 6
+                  }
+                }
+              ]
+            },
+            {
+              "id": "rx-37",
+              "type": "button",
+              "props": {
+                "label": "选择章节并开练  →"
+              },
+              "style": {
+                "background": "#FFFFFF",
+                "color": "#000000",
+                "fontSize": 14,
+                "fontWeight": 800,
+                "minHeight": 48,
+                "padding": "12px 14px",
+                "borderWidth": 3,
+                "borderColor": "#000000",
+                "borderRadius": 10,
+                "boxShadow": "none"
+              },
+              "action": {
+                "type": "navigate",
+                "target": "setup"
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-43",
+          "type": "card",
+          "props": {},
+          "style": {
+            "background": "#FFFFFF",
+            "padding": 14,
+            "gap": 10,
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 12,
+            "boxShadow": "4px 4px 0px #000000"
+          },
+          "children": [
+            {
+              "id": "rx-41",
+              "type": "row",
+              "props": {},
+              "style": {
+                "gap": 12,
+                "alignItems": "center",
+                "justifyContent": "space-between"
+              },
+              "children": [
+                {
+                  "id": "rx-39",
+                  "type": "text",
+                  "props": {
+                    "text": "系统解剖学",
+                    "variant": "body"
+                  },
+                  "style": {
+                    "fontSize": 20,
+                    "fontWeight": 900
+                  }
+                },
+                {
+                  "id": "rx-40",
+                  "type": "badge",
+                  "props": {
+                    "text": "4,020 题"
+                  },
+                  "style": {
+                    "background": "#FF5E7E",
+                    "color": "#000000",
+                    "fontWeight": 800,
+                    "fontSize": 12,
+                    "padding": "5px 10px",
+                    "borderRadius": 6
+                  }
+                }
+              ]
+            },
+            {
+              "id": "rx-42",
+              "type": "button",
+              "props": {
+                "label": "选择章节并开练  →"
+              },
+              "style": {
+                "background": "#FFFFFF",
+                "color": "#000000",
+                "fontSize": 14,
+                "fontWeight": 800,
+                "minHeight": 48,
+                "padding": "12px 14px",
+                "borderWidth": 3,
+                "borderColor": "#000000",
+                "borderRadius": 10,
+                "boxShadow": "none"
+              },
+              "action": {
+                "type": "navigate",
+                "target": "setup"
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-48",
+          "type": "card",
+          "props": {},
+          "style": {
+            "background": "#FFFFFF",
+            "padding": 14,
+            "gap": 10,
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 12,
+            "boxShadow": "4px 4px 0px #000000"
+          },
+          "children": [
+            {
+              "id": "rx-46",
+              "type": "row",
+              "props": {},
+              "style": {
+                "gap": 12,
+                "alignItems": "center",
+                "justifyContent": "space-between"
+              },
+              "children": [
+                {
+                  "id": "rx-44",
+                  "type": "text",
+                  "props": {
+                    "text": "生理学",
+                    "variant": "body"
+                  },
+                  "style": {
+                    "fontSize": 20,
+                    "fontWeight": 900
+                  }
+                },
+                {
+                  "id": "rx-45",
+                  "type": "badge",
+                  "props": {
+                    "text": "3,976 题"
+                  },
+                  "style": {
+                    "background": "#4DEEEA",
+                    "color": "#000000",
+                    "fontWeight": 800,
+                    "fontSize": 12,
+                    "padding": "5px 10px",
+                    "borderRadius": 6
+                  }
+                }
+              ]
+            },
+            {
+              "id": "rx-47",
+              "type": "button",
+              "props": {
+                "label": "选择章节并开练  →"
+              },
+              "style": {
+                "background": "#FFFFFF",
+                "color": "#000000",
+                "fontSize": 14,
+                "fontWeight": 800,
+                "minHeight": 48,
+                "padding": "12px 14px",
+                "borderWidth": 3,
+                "borderColor": "#000000",
+                "borderRadius": 10,
+                "boxShadow": "none"
+              },
+              "action": {
+                "type": "navigate",
+                "target": "setup"
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-53",
+          "type": "card",
+          "props": {},
+          "style": {
+            "background": "#FFFFFF",
+            "padding": 14,
+            "gap": 10,
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 12,
+            "boxShadow": "4px 4px 0px #000000"
+          },
+          "children": [
+            {
+              "id": "rx-51",
+              "type": "row",
+              "props": {},
+              "style": {
+                "gap": 12,
+                "alignItems": "center",
+                "justifyContent": "space-between"
+              },
+              "children": [
+                {
+                  "id": "rx-49",
+                  "type": "text",
+                  "props": {
+                    "text": "病理学",
+                    "variant": "body"
+                  },
+                  "style": {
+                    "fontSize": 20,
+                    "fontWeight": 900
+                  }
+                },
+                {
+                  "id": "rx-50",
+                  "type": "badge",
+                  "props": {
+                    "text": "3,514 题"
+                  },
+                  "style": {
+                    "background": "#FF5E7E",
+                    "color": "#000000",
+                    "fontWeight": 800,
+                    "fontSize": 12,
+                    "padding": "5px 10px",
+                    "borderRadius": 6
+                  }
+                }
+              ]
+            },
+            {
+              "id": "rx-52",
+              "type": "button",
+              "props": {
+                "label": "选择章节并开练  →"
+              },
+              "style": {
+                "background": "#FFFFFF",
+                "color": "#000000",
+                "fontSize": 14,
+                "fontWeight": 800,
+                "minHeight": 48,
+                "padding": "12px 14px",
+                "borderWidth": 3,
+                "borderColor": "#000000",
+                "borderRadius": 10,
+                "boxShadow": "none"
+              },
+              "action": {
+                "type": "navigate",
+                "target": "setup"
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-58",
+          "type": "card",
+          "props": {},
+          "style": {
+            "background": "#FFFFFF",
+            "padding": 14,
+            "gap": 10,
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 12,
+            "boxShadow": "4px 4px 0px #000000"
+          },
+          "children": [
+            {
+              "id": "rx-56",
+              "type": "row",
+              "props": {},
+              "style": {
+                "gap": 12,
+                "alignItems": "center",
+                "justifyContent": "space-between"
+              },
+              "children": [
+                {
+                  "id": "rx-54",
+                  "type": "text",
+                  "props": {
+                    "text": "儿科学",
+                    "variant": "body"
+                  },
+                  "style": {
+                    "fontSize": 20,
+                    "fontWeight": 900
+                  }
+                },
+                {
+                  "id": "rx-55",
+                  "type": "badge",
+                  "props": {
+                    "text": "2,815 题"
+                  },
+                  "style": {
+                    "background": "#4DEEEA",
+                    "color": "#000000",
+                    "fontWeight": 800,
+                    "fontSize": 12,
+                    "padding": "5px 10px",
+                    "borderRadius": 6
+                  }
+                }
+              ]
+            },
+            {
+              "id": "rx-57",
+              "type": "button",
+              "props": {
+                "label": "选择章节并开练  →"
+              },
+              "style": {
+                "background": "#FFFFFF",
+                "color": "#000000",
+                "fontSize": 14,
+                "fontWeight": 800,
+                "minHeight": 48,
+                "padding": "12px 14px",
+                "borderWidth": 3,
+                "borderColor": "#000000",
+                "borderRadius": 10,
+                "boxShadow": "none"
+              },
+              "action": {
+                "type": "navigate",
+                "target": "setup"
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-63",
+          "type": "card",
+          "props": {},
+          "style": {
+            "background": "#FFFFFF",
+            "padding": 14,
+            "gap": 10,
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 12,
+            "boxShadow": "4px 4px 0px #000000"
+          },
+          "children": [
+            {
+              "id": "rx-61",
+              "type": "row",
+              "props": {},
+              "style": {
+                "gap": 12,
+                "alignItems": "center",
+                "justifyContent": "space-between"
+              },
+              "children": [
+                {
+                  "id": "rx-59",
+                  "type": "text",
+                  "props": {
+                    "text": "妇产科学",
+                    "variant": "body"
+                  },
+                  "style": {
+                    "fontSize": 20,
+                    "fontWeight": 900
+                  }
+                },
+                {
+                  "id": "rx-60",
+                  "type": "badge",
+                  "props": {
+                    "text": "2,448 题"
+                  },
+                  "style": {
+                    "background": "#FF5E7E",
+                    "color": "#000000",
+                    "fontWeight": 800,
+                    "fontSize": 12,
+                    "padding": "5px 10px",
+                    "borderRadius": 6
+                  }
+                }
+              ]
+            },
+            {
+              "id": "rx-62",
+              "type": "button",
+              "props": {
+                "label": "选择章节并开练  →"
+              },
+              "style": {
+                "background": "#FFFFFF",
+                "color": "#000000",
+                "fontSize": 14,
+                "fontWeight": 800,
+                "minHeight": 48,
+                "padding": "12px 14px",
+                "borderWidth": 3,
+                "borderColor": "#000000",
+                "borderRadius": 10,
+                "boxShadow": "none"
+              },
+              "action": {
+                "type": "navigate",
+                "target": "setup"
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-68",
+          "type": "card",
+          "props": {},
+          "style": {
+            "background": "#FFFFFF",
+            "padding": 14,
+            "gap": 10,
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 12,
+            "boxShadow": "4px 4px 0px #000000"
+          },
+          "children": [
+            {
+              "id": "rx-66",
+              "type": "row",
+              "props": {},
+              "style": {
+                "gap": 12,
+                "alignItems": "center",
+                "justifyContent": "space-between"
+              },
+              "children": [
+                {
+                  "id": "rx-64",
+                  "type": "text",
+                  "props": {
+                    "text": "诊断学",
+                    "variant": "body"
+                  },
+                  "style": {
+                    "fontSize": 20,
+                    "fontWeight": 900
+                  }
+                },
+                {
+                  "id": "rx-65",
+                  "type": "badge",
+                  "props": {
+                    "text": "2,364 题"
+                  },
+                  "style": {
+                    "background": "#4DEEEA",
+                    "color": "#000000",
+                    "fontWeight": 800,
+                    "fontSize": 12,
+                    "padding": "5px 10px",
+                    "borderRadius": 6
+                  }
+                }
+              ]
+            },
+            {
+              "id": "rx-67",
+              "type": "button",
+              "props": {
+                "label": "选择章节并开练  →"
+              },
+              "style": {
+                "background": "#FFFFFF",
+                "color": "#000000",
+                "fontSize": 14,
+                "fontWeight": 800,
+                "minHeight": 48,
+                "padding": "12px 14px",
+                "borderWidth": 3,
+                "borderColor": "#000000",
+                "borderRadius": 10,
+                "boxShadow": "none"
+              },
+              "action": {
+                "type": "navigate",
+                "target": "setup"
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-73",
+          "type": "card",
+          "props": {},
+          "style": {
+            "background": "#FFFFFF",
+            "padding": 14,
+            "gap": 10,
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 12,
+            "boxShadow": "4px 4px 0px #000000"
+          },
+          "children": [
+            {
+              "id": "rx-71",
+              "type": "row",
+              "props": {},
+              "style": {
+                "gap": 12,
+                "alignItems": "center",
+                "justifyContent": "space-between"
+              },
+              "children": [
+                {
+                  "id": "rx-69",
+                  "type": "text",
+                  "props": {
+                    "text": "生物化学与分子生物学",
+                    "variant": "body"
+                  },
+                  "style": {
+                    "fontSize": 20,
+                    "fontWeight": 900
+                  }
+                },
+                {
+                  "id": "rx-70",
+                  "type": "badge",
+                  "props": {
+                    "text": "1,994 题"
+                  },
+                  "style": {
+                    "background": "#FF5E7E",
+                    "color": "#000000",
+                    "fontWeight": 800,
+                    "fontSize": 12,
+                    "padding": "5px 10px",
+                    "borderRadius": 6
+                  }
+                }
+              ]
+            },
+            {
+              "id": "rx-72",
+              "type": "button",
+              "props": {
+                "label": "选择章节并开练  →"
+              },
+              "style": {
+                "background": "#FFFFFF",
+                "color": "#000000",
+                "fontSize": 14,
+                "fontWeight": 800,
+                "minHeight": 48,
+                "padding": "12px 14px",
+                "borderWidth": 3,
+                "borderColor": "#000000",
+                "borderRadius": 10,
+                "boxShadow": "none"
+              },
+              "action": {
+                "type": "navigate",
+                "target": "setup"
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-74",
+          "type": "bottomnav",
+          "props": {
+            "label": "主导航",
+            "options": "首页|刷题|科目|搜索",
+            "pageTargets": "home|setup|subjects|search",
+            "placement": "fixed"
+          },
+          "style": {
+            "minHeight": 74,
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 10,
+            "boxShadow": "3px 3px 0px #000000",
+            "padding": "8px 12px 11px",
+            "gap": 10,
+            "fontSize": 12,
+            "fontWeight": 800,
+            "background": "#FFFBEB"
+          }
+        }
+      ]
+    },
+    {
+      "id": "setup",
+      "name": "开始刷题",
+      "nodes": [
+        {
+          "id": "rx-75",
+          "type": "navbar",
+          "props": {
+            "title": "开始刷题",
+            "back": true
+          },
+          "style": {
+            "padding": 0,
+            "minHeight": 48,
+            "fontWeight": 900
+          },
+          "action": {
+            "type": "back"
+          }
+        },
+        {
+          "id": "rx-78",
+          "type": "stack",
+          "props": {},
+          "style": {
+            "gap": 6
+          },
+          "children": [
+            {
+              "id": "rx-76",
+              "type": "text",
+              "props": {
+                "text": "今天，练哪一科？",
+                "variant": "heading"
+              },
+              "style": {
+                "fontSize": 28,
+                "fontWeight": 900
+              }
+            },
+            {
+              "id": "rx-77",
+              "type": "text",
+              "props": {
+                "text": "科目、章节、题数，按你的节奏来。",
+                "variant": "body"
+              },
+              "style": {
+                "fontSize": 14,
+                "fontWeight": 500
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-82",
+          "type": "card",
+          "props": {},
+          "style": {
+            "background": "#FFFFFF",
+            "padding": 18,
+            "gap": 12,
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 12,
+            "boxShadow": "4px 4px 0px #000000"
+          },
+          "children": [
+            {
+              "id": "rx-79",
+              "type": "badge",
+              "props": {
+                "text": "01 / 选择范围"
+              },
+              "style": {
+                "background": "#4DEEEA",
+                "color": "#000000",
+                "fontWeight": 800,
+                "fontSize": 12,
+                "padding": "5px 10px",
+                "borderRadius": 6
+              }
+            },
+            {
+              "id": "rx-80",
+              "type": "select",
+              "props": {
+                "label": "科目",
+                "options": "生理学|内科学|病理学|系统解剖学",
+                "value": "生理学"
+              },
+              "style": {
+                "fontSize": 16
+              }
+            },
+            {
+              "id": "rx-81",
+              "type": "select",
+              "props": {
+                "label": "章节",
+                "options": "全部章节|第一章 绪论|第二章 细胞的基本功能|第三章 血液",
+                "value": "第一章 绪论"
+              },
+              "style": {
+                "fontSize": 16
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-87",
+          "type": "card",
+          "props": {},
+          "style": {
+            "background": "#FFFFFF",
+            "padding": 18,
+            "gap": 12,
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 12,
+            "boxShadow": "4px 4px 0px #000000"
+          },
+          "children": [
+            {
+              "id": "rx-83",
+              "type": "badge",
+              "props": {
+                "text": "02 / 练习设置"
+              },
+              "style": {
+                "background": "#FF5E7E",
+                "color": "#000000",
+                "fontWeight": 800,
+                "fontSize": 12,
+                "padding": "5px 10px",
+                "borderRadius": 6
+              }
+            },
+            {
+              "id": "rx-84",
+              "type": "select",
+              "props": {
+                "label": "题数",
+                "options": "10 题|20 题|50 题",
+                "value": "20 题"
+              },
+              "style": {
+                "fontSize": 16
+              }
+            },
+            {
+              "id": "rx-85",
+              "type": "segmented",
+              "props": {
+                "label": "题型",
+                "options": "全部|单选|多选|案例",
+                "value": "全部"
+              },
+              "style": {
+                "minHeight": 48,
+                "fontSize": 14
+              }
+            },
+            {
+              "id": "rx-86",
+              "type": "switch",
+              "props": {
+                "label": "随机出题",
+                "checked": true,
+                "onColor": "#FFE600",
+                "offColor": "#FFFFFF",
+                "thumbColor": "#000000",
+                "switchSize": 32
+              },
+              "style": {
+                "minHeight": 48
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-90",
+          "type": "card",
+          "props": {},
+          "style": {
+            "background": "#4DEEEA",
+            "padding": 14,
+            "gap": 4,
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 12,
+            "boxShadow": "none"
+          },
+          "children": [
+            {
+              "id": "rx-88",
+              "type": "text",
+              "props": {
+                "text": "生理学 · 第一章 绪论",
+                "variant": "body"
+              },
+              "style": {
+                "fontSize": 16,
+                "fontWeight": 800
+              }
+            },
+            {
+              "id": "rx-89",
+              "type": "text",
+              "props": {
+                "text": "20 题 / 随机练习 / 离线作答",
+                "variant": "body"
+              },
+              "style": {
+                "fontSize": 13,
+                "fontWeight": 500
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-92",
+          "type": "fixedbar",
+          "props": {
+            "edge": "bottom"
+          },
+          "style": {
+            "gap": 10,
+            "padding": "12px 0 20px"
+          },
+          "children": [
+            {
+              "id": "rx-91",
+              "type": "button",
+              "props": {
+                "label": "开始这组练习  →"
+              },
+              "style": {
+                "background": "#FFE600",
+                "color": "#000000",
+                "fontSize": 16,
+                "fontWeight": 800,
+                "minHeight": 52,
+                "padding": "12px 14px",
+                "borderWidth": 3,
+                "borderColor": "#000000",
+                "borderRadius": 10,
+                "boxShadow": "3px 3px 0px #000000"
+              },
+              "action": {
+                "type": "navigate",
+                "target": "question"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "question",
+      "name": "答题 · 未选择",
+      "nodes": [
+        {
+          "id": "rx-96",
+          "type": "row",
+          "props": {},
+          "style": {
+            "gap": 12,
+            "alignItems": "center",
+            "justifyContent": "space-between"
+          },
+          "children": [
+            {
+              "id": "rx-93",
+              "type": "button",
+              "props": {
+                "label": "←"
+              },
+              "style": {
+                "background": "#FFFFFF",
+                "color": "#000000",
+                "fontSize": 16,
+                "fontWeight": 800,
+                "minHeight": 52,
+                "padding": 8,
+                "borderWidth": 3,
+                "borderColor": "#000000",
+                "borderRadius": 10,
+                "boxShadow": "none",
+                "width": 48
+              },
+              "action": {
+                "type": "navigate",
+                "target": "setup"
+              }
+            },
+            {
+              "id": "rx-94",
+              "type": "text",
+              "props": {
+                "text": "生理学",
+                "variant": "body"
+              },
+              "style": {
+                "fontSize": 18,
+                "fontWeight": 900
+              }
+            },
+            {
+              "id": "rx-95",
+              "type": "text",
+              "props": {
+                "text": "01 / 20",
+                "variant": "body"
+              },
+              "style": {
+                "fontSize": 14,
+                "fontWeight": 800
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-97",
+          "type": "progress",
+          "props": {
+            "label": "本轮进度",
+            "value": 5,
+            "trackHeight": 8,
+            "fillColor": "#FFE600",
+            "trackColor": "#FFFFFF"
+          },
+          "style": {
+            "padding": 0
+          }
+        },
+        {
+          "id": "rx-100",
+          "type": "row",
+          "props": {},
+          "style": {
+            "gap": 10,
+            "alignItems": "center"
+          },
+          "children": [
+            {
+              "id": "rx-98",
+              "type": "badge",
+              "props": {
+                "text": "A1 · 单选"
+              },
+              "style": {
+                "background": "#4DEEEA",
+                "color": "#000000",
+                "fontWeight": 800,
+                "fontSize": 12,
+                "padding": "5px 10px",
+                "borderRadius": 6
+              }
+            },
+            {
+              "id": "rx-99",
+              "type": "badge",
+              "props": {
+                "text": "2016 年真题"
+              },
+              "style": {
+                "background": "#FFFFFF",
+                "color": "#000000",
+                "fontWeight": 800,
+                "fontSize": 12,
+                "padding": "5px 10px",
+                "borderRadius": 6
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-102",
+          "type": "stack",
+          "props": {},
+          "style": {
+            "gap": 6
+          },
+          "children": [
+            {
+              "id": "rx-101",
+              "type": "text",
+              "props": {
+                "text": "下列关于机体内环境稳态的描述，错误的是",
+                "variant": "heading"
+              },
+              "style": {
+                "fontSize": 28,
+                "fontWeight": 900
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-103",
+          "type": "text",
+          "props": {
+            "text": "请选择一个答案",
+            "variant": "body"
+          },
+          "style": {
+            "fontSize": 13,
+            "fontWeight": 600
+          }
+        },
+        {
+          "id": "rx-104",
+          "type": "button",
+          "props": {
+            "label": "A   稳态是指细胞内液理化性质相对恒定"
+          },
+          "style": {
+            "background": "#FFFFFF",
+            "color": "#000000",
+            "fontSize": 16,
+            "fontWeight": 600,
+            "minHeight": 62,
+            "padding": "14px 16px",
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 10,
+            "boxShadow": "none",
+            "textAlign": "left"
+          },
+          "action": {
+            "type": "navigate",
+            "target": "question-A"
+          }
+        },
+        {
+          "id": "rx-105",
+          "type": "button",
+          "props": {
+            "label": "B   稳态是一种动态平衡"
+          },
+          "style": {
+            "background": "#FFFFFF",
+            "color": "#000000",
+            "fontSize": 16,
+            "fontWeight": 600,
+            "minHeight": 62,
+            "padding": "14px 16px",
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 10,
+            "boxShadow": "none",
+            "textAlign": "left"
+          },
+          "action": {
+            "type": "navigate",
+            "target": "question-B"
+          }
+        },
+        {
+          "id": "rx-106",
+          "type": "button",
+          "props": {
+            "label": "C   稳态的维持是机体自我调节的结果"
+          },
+          "style": {
+            "background": "#FFFFFF",
+            "color": "#000000",
+            "fontSize": 16,
+            "fontWeight": 600,
+            "minHeight": 62,
+            "padding": "14px 16px",
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 10,
+            "boxShadow": "none",
+            "textAlign": "left"
+          },
+          "action": {
+            "type": "navigate",
+            "target": "question-C"
+          }
+        },
+        {
+          "id": "rx-107",
+          "type": "button",
+          "props": {
+            "label": "D   稳态调节中都有一个调节点"
+          },
+          "style": {
+            "background": "#FFFFFF",
+            "color": "#000000",
+            "fontSize": 16,
+            "fontWeight": 600,
+            "minHeight": 62,
+            "padding": "14px 16px",
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 10,
+            "boxShadow": "none",
+            "textAlign": "left"
+          },
+          "action": {
+            "type": "navigate",
+            "target": "question-D"
+          }
+        },
+        {
+          "id": "rx-109",
+          "type": "fixedbar",
+          "props": {
+            "edge": "bottom"
+          },
+          "style": {
+            "gap": 10,
+            "padding": "12px 0 20px"
+          },
+          "children": [
+            {
+              "id": "rx-108",
+              "type": "button",
+              "props": {
+                "label": "提交答案"
+              },
+              "style": {
+                "background": "#FFE600",
+                "color": "#000000",
+                "fontSize": 16,
+                "fontWeight": 800,
+                "minHeight": 52,
+                "padding": "12px 14px",
+                "borderWidth": 3,
+                "borderColor": "#000000",
+                "borderRadius": 10,
+                "boxShadow": "3px 3px 0px #000000"
+              },
+              "action": {
+                "type": "toast",
+                "message": "请先选择一个答案"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "question-A",
+      "name": "答题 · 已选 A",
+      "nodes": [
+        {
+          "id": "rx-113",
+          "type": "row",
+          "props": {},
+          "style": {
+            "gap": 12,
+            "alignItems": "center",
+            "justifyContent": "space-between"
+          },
+          "children": [
+            {
+              "id": "rx-110",
+              "type": "button",
+              "props": {
+                "label": "←"
+              },
+              "style": {
+                "background": "#FFFFFF",
+                "color": "#000000",
+                "fontSize": 16,
+                "fontWeight": 800,
+                "minHeight": 52,
+                "padding": 8,
+                "borderWidth": 3,
+                "borderColor": "#000000",
+                "borderRadius": 10,
+                "boxShadow": "none",
+                "width": 48
+              },
+              "action": {
+                "type": "navigate",
+                "target": "setup"
+              }
+            },
+            {
+              "id": "rx-111",
+              "type": "text",
+              "props": {
+                "text": "生理学",
+                "variant": "body"
+              },
+              "style": {
+                "fontSize": 18,
+                "fontWeight": 900
+              }
+            },
+            {
+              "id": "rx-112",
+              "type": "text",
+              "props": {
+                "text": "01 / 20",
+                "variant": "body"
+              },
+              "style": {
+                "fontSize": 14,
+                "fontWeight": 800
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-114",
+          "type": "progress",
+          "props": {
+            "label": "本轮进度",
+            "value": 5,
+            "trackHeight": 8,
+            "fillColor": "#FFE600",
+            "trackColor": "#FFFFFF"
+          },
+          "style": {
+            "padding": 0
+          }
+        },
+        {
+          "id": "rx-117",
+          "type": "row",
+          "props": {},
+          "style": {
+            "gap": 10,
+            "alignItems": "center"
+          },
+          "children": [
+            {
+              "id": "rx-115",
+              "type": "badge",
+              "props": {
+                "text": "A1 · 单选"
+              },
+              "style": {
+                "background": "#4DEEEA",
+                "color": "#000000",
+                "fontWeight": 800,
+                "fontSize": 12,
+                "padding": "5px 10px",
+                "borderRadius": 6
+              }
+            },
+            {
+              "id": "rx-116",
+              "type": "badge",
+              "props": {
+                "text": "2016 年真题"
+              },
+              "style": {
+                "background": "#FFFFFF",
+                "color": "#000000",
+                "fontWeight": 800,
+                "fontSize": 12,
+                "padding": "5px 10px",
+                "borderRadius": 6
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-119",
+          "type": "stack",
+          "props": {},
+          "style": {
+            "gap": 6
+          },
+          "children": [
+            {
+              "id": "rx-118",
+              "type": "text",
+              "props": {
+                "text": "下列关于机体内环境稳态的描述，错误的是",
+                "variant": "heading"
+              },
+              "style": {
+                "fontSize": 28,
+                "fontWeight": 900
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-120",
+          "type": "text",
+          "props": {
+            "text": "请选择一个答案",
+            "variant": "body"
+          },
+          "style": {
+            "fontSize": 13,
+            "fontWeight": 600
+          }
+        },
+        {
+          "id": "rx-121",
+          "type": "button",
+          "props": {
+            "label": "A   稳态是指细胞内液理化性质相对恒定"
+          },
+          "style": {
+            "background": "#FFE600",
+            "color": "#000000",
+            "fontSize": 16,
+            "fontWeight": 900,
+            "minHeight": 62,
+            "padding": "14px 16px",
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 10,
+            "boxShadow": "4px 4px 0px #000000",
+            "textAlign": "left"
+          },
+          "action": {
+            "type": "navigate",
+            "target": "question-A"
+          }
+        },
+        {
+          "id": "rx-122",
+          "type": "button",
+          "props": {
+            "label": "B   稳态是一种动态平衡"
+          },
+          "style": {
+            "background": "#FFFFFF",
+            "color": "#000000",
+            "fontSize": 16,
+            "fontWeight": 600,
+            "minHeight": 62,
+            "padding": "14px 16px",
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 10,
+            "boxShadow": "none",
+            "textAlign": "left"
+          },
+          "action": {
+            "type": "navigate",
+            "target": "question-B"
+          }
+        },
+        {
+          "id": "rx-123",
+          "type": "button",
+          "props": {
+            "label": "C   稳态的维持是机体自我调节的结果"
+          },
+          "style": {
+            "background": "#FFFFFF",
+            "color": "#000000",
+            "fontSize": 16,
+            "fontWeight": 600,
+            "minHeight": 62,
+            "padding": "14px 16px",
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 10,
+            "boxShadow": "none",
+            "textAlign": "left"
+          },
+          "action": {
+            "type": "navigate",
+            "target": "question-C"
+          }
+        },
+        {
+          "id": "rx-124",
+          "type": "button",
+          "props": {
+            "label": "D   稳态调节中都有一个调节点"
+          },
+          "style": {
+            "background": "#FFFFFF",
+            "color": "#000000",
+            "fontSize": 16,
+            "fontWeight": 600,
+            "minHeight": 62,
+            "padding": "14px 16px",
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 10,
+            "boxShadow": "none",
+            "textAlign": "left"
+          },
+          "action": {
+            "type": "navigate",
+            "target": "question-D"
+          }
+        },
+        {
+          "id": "rx-126",
+          "type": "fixedbar",
+          "props": {
+            "edge": "bottom"
+          },
+          "style": {
+            "gap": 10,
+            "padding": "12px 0 20px"
+          },
+          "children": [
+            {
+              "id": "rx-125",
+              "type": "button",
+              "props": {
+                "label": "提交答案"
+              },
+              "style": {
+                "background": "#FFE600",
+                "color": "#000000",
+                "fontSize": 16,
+                "fontWeight": 800,
+                "minHeight": 52,
+                "padding": "12px 14px",
+                "borderWidth": 3,
+                "borderColor": "#000000",
+                "borderRadius": 10,
+                "boxShadow": "3px 3px 0px #000000"
+              },
+              "action": {
+                "type": "navigate",
+                "target": "analysis-A"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "question-B",
+      "name": "答题 · 已选 B",
+      "nodes": [
+        {
+          "id": "rx-130",
+          "type": "row",
+          "props": {},
+          "style": {
+            "gap": 12,
+            "alignItems": "center",
+            "justifyContent": "space-between"
+          },
+          "children": [
+            {
+              "id": "rx-127",
+              "type": "button",
+              "props": {
+                "label": "←"
+              },
+              "style": {
+                "background": "#FFFFFF",
+                "color": "#000000",
+                "fontSize": 16,
+                "fontWeight": 800,
+                "minHeight": 52,
+                "padding": 8,
+                "borderWidth": 3,
+                "borderColor": "#000000",
+                "borderRadius": 10,
+                "boxShadow": "none",
+                "width": 48
+              },
+              "action": {
+                "type": "navigate",
+                "target": "setup"
+              }
+            },
+            {
+              "id": "rx-128",
+              "type": "text",
+              "props": {
+                "text": "生理学",
+                "variant": "body"
+              },
+              "style": {
+                "fontSize": 18,
+                "fontWeight": 900
+              }
+            },
+            {
+              "id": "rx-129",
+              "type": "text",
+              "props": {
+                "text": "01 / 20",
+                "variant": "body"
+              },
+              "style": {
+                "fontSize": 14,
+                "fontWeight": 800
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-131",
+          "type": "progress",
+          "props": {
+            "label": "本轮进度",
+            "value": 5,
+            "trackHeight": 8,
+            "fillColor": "#FFE600",
+            "trackColor": "#FFFFFF"
+          },
+          "style": {
+            "padding": 0
+          }
+        },
+        {
+          "id": "rx-134",
+          "type": "row",
+          "props": {},
+          "style": {
+            "gap": 10,
+            "alignItems": "center"
+          },
+          "children": [
+            {
+              "id": "rx-132",
+              "type": "badge",
+              "props": {
+                "text": "A1 · 单选"
+              },
+              "style": {
+                "background": "#4DEEEA",
+                "color": "#000000",
+                "fontWeight": 800,
+                "fontSize": 12,
+                "padding": "5px 10px",
+                "borderRadius": 6
+              }
+            },
+            {
+              "id": "rx-133",
+              "type": "badge",
+              "props": {
+                "text": "2016 年真题"
+              },
+              "style": {
+                "background": "#FFFFFF",
+                "color": "#000000",
+                "fontWeight": 800,
+                "fontSize": 12,
+                "padding": "5px 10px",
+                "borderRadius": 6
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-136",
+          "type": "stack",
+          "props": {},
+          "style": {
+            "gap": 6
+          },
+          "children": [
+            {
+              "id": "rx-135",
+              "type": "text",
+              "props": {
+                "text": "下列关于机体内环境稳态的描述，错误的是",
+                "variant": "heading"
+              },
+              "style": {
+                "fontSize": 28,
+                "fontWeight": 900
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-137",
+          "type": "text",
+          "props": {
+            "text": "请选择一个答案",
+            "variant": "body"
+          },
+          "style": {
+            "fontSize": 13,
+            "fontWeight": 600
+          }
+        },
+        {
+          "id": "rx-138",
+          "type": "button",
+          "props": {
+            "label": "A   稳态是指细胞内液理化性质相对恒定"
+          },
+          "style": {
+            "background": "#FFFFFF",
+            "color": "#000000",
+            "fontSize": 16,
+            "fontWeight": 600,
+            "minHeight": 62,
+            "padding": "14px 16px",
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 10,
+            "boxShadow": "none",
+            "textAlign": "left"
+          },
+          "action": {
+            "type": "navigate",
+            "target": "question-A"
+          }
+        },
+        {
+          "id": "rx-139",
+          "type": "button",
+          "props": {
+            "label": "B   稳态是一种动态平衡"
+          },
+          "style": {
+            "background": "#FFE600",
+            "color": "#000000",
+            "fontSize": 16,
+            "fontWeight": 900,
+            "minHeight": 62,
+            "padding": "14px 16px",
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 10,
+            "boxShadow": "4px 4px 0px #000000",
+            "textAlign": "left"
+          },
+          "action": {
+            "type": "navigate",
+            "target": "question-B"
+          }
+        },
+        {
+          "id": "rx-140",
+          "type": "button",
+          "props": {
+            "label": "C   稳态的维持是机体自我调节的结果"
+          },
+          "style": {
+            "background": "#FFFFFF",
+            "color": "#000000",
+            "fontSize": 16,
+            "fontWeight": 600,
+            "minHeight": 62,
+            "padding": "14px 16px",
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 10,
+            "boxShadow": "none",
+            "textAlign": "left"
+          },
+          "action": {
+            "type": "navigate",
+            "target": "question-C"
+          }
+        },
+        {
+          "id": "rx-141",
+          "type": "button",
+          "props": {
+            "label": "D   稳态调节中都有一个调节点"
+          },
+          "style": {
+            "background": "#FFFFFF",
+            "color": "#000000",
+            "fontSize": 16,
+            "fontWeight": 600,
+            "minHeight": 62,
+            "padding": "14px 16px",
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 10,
+            "boxShadow": "none",
+            "textAlign": "left"
+          },
+          "action": {
+            "type": "navigate",
+            "target": "question-D"
+          }
+        },
+        {
+          "id": "rx-143",
+          "type": "fixedbar",
+          "props": {
+            "edge": "bottom"
+          },
+          "style": {
+            "gap": 10,
+            "padding": "12px 0 20px"
+          },
+          "children": [
+            {
+              "id": "rx-142",
+              "type": "button",
+              "props": {
+                "label": "提交答案"
+              },
+              "style": {
+                "background": "#FFE600",
+                "color": "#000000",
+                "fontSize": 16,
+                "fontWeight": 800,
+                "minHeight": 52,
+                "padding": "12px 14px",
+                "borderWidth": 3,
+                "borderColor": "#000000",
+                "borderRadius": 10,
+                "boxShadow": "3px 3px 0px #000000"
+              },
+              "action": {
+                "type": "navigate",
+                "target": "analysis-B"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "question-C",
+      "name": "答题 · 已选 C",
+      "nodes": [
+        {
+          "id": "rx-147",
+          "type": "row",
+          "props": {},
+          "style": {
+            "gap": 12,
+            "alignItems": "center",
+            "justifyContent": "space-between"
+          },
+          "children": [
+            {
+              "id": "rx-144",
+              "type": "button",
+              "props": {
+                "label": "←"
+              },
+              "style": {
+                "background": "#FFFFFF",
+                "color": "#000000",
+                "fontSize": 16,
+                "fontWeight": 800,
+                "minHeight": 52,
+                "padding": 8,
+                "borderWidth": 3,
+                "borderColor": "#000000",
+                "borderRadius": 10,
+                "boxShadow": "none",
+                "width": 48
+              },
+              "action": {
+                "type": "navigate",
+                "target": "setup"
+              }
+            },
+            {
+              "id": "rx-145",
+              "type": "text",
+              "props": {
+                "text": "生理学",
+                "variant": "body"
+              },
+              "style": {
+                "fontSize": 18,
+                "fontWeight": 900
+              }
+            },
+            {
+              "id": "rx-146",
+              "type": "text",
+              "props": {
+                "text": "01 / 20",
+                "variant": "body"
+              },
+              "style": {
+                "fontSize": 14,
+                "fontWeight": 800
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-148",
+          "type": "progress",
+          "props": {
+            "label": "本轮进度",
+            "value": 5,
+            "trackHeight": 8,
+            "fillColor": "#FFE600",
+            "trackColor": "#FFFFFF"
+          },
+          "style": {
+            "padding": 0
+          }
+        },
+        {
+          "id": "rx-151",
+          "type": "row",
+          "props": {},
+          "style": {
+            "gap": 10,
+            "alignItems": "center"
+          },
+          "children": [
+            {
+              "id": "rx-149",
+              "type": "badge",
+              "props": {
+                "text": "A1 · 单选"
+              },
+              "style": {
+                "background": "#4DEEEA",
+                "color": "#000000",
+                "fontWeight": 800,
+                "fontSize": 12,
+                "padding": "5px 10px",
+                "borderRadius": 6
+              }
+            },
+            {
+              "id": "rx-150",
+              "type": "badge",
+              "props": {
+                "text": "2016 年真题"
+              },
+              "style": {
+                "background": "#FFFFFF",
+                "color": "#000000",
+                "fontWeight": 800,
+                "fontSize": 12,
+                "padding": "5px 10px",
+                "borderRadius": 6
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-153",
+          "type": "stack",
+          "props": {},
+          "style": {
+            "gap": 6
+          },
+          "children": [
+            {
+              "id": "rx-152",
+              "type": "text",
+              "props": {
+                "text": "下列关于机体内环境稳态的描述，错误的是",
+                "variant": "heading"
+              },
+              "style": {
+                "fontSize": 28,
+                "fontWeight": 900
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-154",
+          "type": "text",
+          "props": {
+            "text": "请选择一个答案",
+            "variant": "body"
+          },
+          "style": {
+            "fontSize": 13,
+            "fontWeight": 600
+          }
+        },
+        {
+          "id": "rx-155",
+          "type": "button",
+          "props": {
+            "label": "A   稳态是指细胞内液理化性质相对恒定"
+          },
+          "style": {
+            "background": "#FFFFFF",
+            "color": "#000000",
+            "fontSize": 16,
+            "fontWeight": 600,
+            "minHeight": 62,
+            "padding": "14px 16px",
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 10,
+            "boxShadow": "none",
+            "textAlign": "left"
+          },
+          "action": {
+            "type": "navigate",
+            "target": "question-A"
+          }
+        },
+        {
+          "id": "rx-156",
+          "type": "button",
+          "props": {
+            "label": "B   稳态是一种动态平衡"
+          },
+          "style": {
+            "background": "#FFFFFF",
+            "color": "#000000",
+            "fontSize": 16,
+            "fontWeight": 600,
+            "minHeight": 62,
+            "padding": "14px 16px",
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 10,
+            "boxShadow": "none",
+            "textAlign": "left"
+          },
+          "action": {
+            "type": "navigate",
+            "target": "question-B"
+          }
+        },
+        {
+          "id": "rx-157",
+          "type": "button",
+          "props": {
+            "label": "C   稳态的维持是机体自我调节的结果"
+          },
+          "style": {
+            "background": "#FFE600",
+            "color": "#000000",
+            "fontSize": 16,
+            "fontWeight": 900,
+            "minHeight": 62,
+            "padding": "14px 16px",
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 10,
+            "boxShadow": "4px 4px 0px #000000",
+            "textAlign": "left"
+          },
+          "action": {
+            "type": "navigate",
+            "target": "question-C"
+          }
+        },
+        {
+          "id": "rx-158",
+          "type": "button",
+          "props": {
+            "label": "D   稳态调节中都有一个调节点"
+          },
+          "style": {
+            "background": "#FFFFFF",
+            "color": "#000000",
+            "fontSize": 16,
+            "fontWeight": 600,
+            "minHeight": 62,
+            "padding": "14px 16px",
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 10,
+            "boxShadow": "none",
+            "textAlign": "left"
+          },
+          "action": {
+            "type": "navigate",
+            "target": "question-D"
+          }
+        },
+        {
+          "id": "rx-160",
+          "type": "fixedbar",
+          "props": {
+            "edge": "bottom"
+          },
+          "style": {
+            "gap": 10,
+            "padding": "12px 0 20px"
+          },
+          "children": [
+            {
+              "id": "rx-159",
+              "type": "button",
+              "props": {
+                "label": "提交答案"
+              },
+              "style": {
+                "background": "#FFE600",
+                "color": "#000000",
+                "fontSize": 16,
+                "fontWeight": 800,
+                "minHeight": 52,
+                "padding": "12px 14px",
+                "borderWidth": 3,
+                "borderColor": "#000000",
+                "borderRadius": 10,
+                "boxShadow": "3px 3px 0px #000000"
+              },
+              "action": {
+                "type": "navigate",
+                "target": "analysis-C"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "question-D",
+      "name": "答题 · 已选 D",
+      "nodes": [
+        {
+          "id": "rx-164",
+          "type": "row",
+          "props": {},
+          "style": {
+            "gap": 12,
+            "alignItems": "center",
+            "justifyContent": "space-between"
+          },
+          "children": [
+            {
+              "id": "rx-161",
+              "type": "button",
+              "props": {
+                "label": "←"
+              },
+              "style": {
+                "background": "#FFFFFF",
+                "color": "#000000",
+                "fontSize": 16,
+                "fontWeight": 800,
+                "minHeight": 52,
+                "padding": 8,
+                "borderWidth": 3,
+                "borderColor": "#000000",
+                "borderRadius": 10,
+                "boxShadow": "none",
+                "width": 48
+              },
+              "action": {
+                "type": "navigate",
+                "target": "setup"
+              }
+            },
+            {
+              "id": "rx-162",
+              "type": "text",
+              "props": {
+                "text": "生理学",
+                "variant": "body"
+              },
+              "style": {
+                "fontSize": 18,
+                "fontWeight": 900
+              }
+            },
+            {
+              "id": "rx-163",
+              "type": "text",
+              "props": {
+                "text": "01 / 20",
+                "variant": "body"
+              },
+              "style": {
+                "fontSize": 14,
+                "fontWeight": 800
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-165",
+          "type": "progress",
+          "props": {
+            "label": "本轮进度",
+            "value": 5,
+            "trackHeight": 8,
+            "fillColor": "#FFE600",
+            "trackColor": "#FFFFFF"
+          },
+          "style": {
+            "padding": 0
+          }
+        },
+        {
+          "id": "rx-168",
+          "type": "row",
+          "props": {},
+          "style": {
+            "gap": 10,
+            "alignItems": "center"
+          },
+          "children": [
+            {
+              "id": "rx-166",
+              "type": "badge",
+              "props": {
+                "text": "A1 · 单选"
+              },
+              "style": {
+                "background": "#4DEEEA",
+                "color": "#000000",
+                "fontWeight": 800,
+                "fontSize": 12,
+                "padding": "5px 10px",
+                "borderRadius": 6
+              }
+            },
+            {
+              "id": "rx-167",
+              "type": "badge",
+              "props": {
+                "text": "2016 年真题"
+              },
+              "style": {
+                "background": "#FFFFFF",
+                "color": "#000000",
+                "fontWeight": 800,
+                "fontSize": 12,
+                "padding": "5px 10px",
+                "borderRadius": 6
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-170",
+          "type": "stack",
+          "props": {},
+          "style": {
+            "gap": 6
+          },
+          "children": [
+            {
+              "id": "rx-169",
+              "type": "text",
+              "props": {
+                "text": "下列关于机体内环境稳态的描述，错误的是",
+                "variant": "heading"
+              },
+              "style": {
+                "fontSize": 28,
+                "fontWeight": 900
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-171",
+          "type": "text",
+          "props": {
+            "text": "请选择一个答案",
+            "variant": "body"
+          },
+          "style": {
+            "fontSize": 13,
+            "fontWeight": 600
+          }
+        },
+        {
+          "id": "rx-172",
+          "type": "button",
+          "props": {
+            "label": "A   稳态是指细胞内液理化性质相对恒定"
+          },
+          "style": {
+            "background": "#FFFFFF",
+            "color": "#000000",
+            "fontSize": 16,
+            "fontWeight": 600,
+            "minHeight": 62,
+            "padding": "14px 16px",
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 10,
+            "boxShadow": "none",
+            "textAlign": "left"
+          },
+          "action": {
+            "type": "navigate",
+            "target": "question-A"
+          }
+        },
+        {
+          "id": "rx-173",
+          "type": "button",
+          "props": {
+            "label": "B   稳态是一种动态平衡"
+          },
+          "style": {
+            "background": "#FFFFFF",
+            "color": "#000000",
+            "fontSize": 16,
+            "fontWeight": 600,
+            "minHeight": 62,
+            "padding": "14px 16px",
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 10,
+            "boxShadow": "none",
+            "textAlign": "left"
+          },
+          "action": {
+            "type": "navigate",
+            "target": "question-B"
+          }
+        },
+        {
+          "id": "rx-174",
+          "type": "button",
+          "props": {
+            "label": "C   稳态的维持是机体自我调节的结果"
+          },
+          "style": {
+            "background": "#FFFFFF",
+            "color": "#000000",
+            "fontSize": 16,
+            "fontWeight": 600,
+            "minHeight": 62,
+            "padding": "14px 16px",
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 10,
+            "boxShadow": "none",
+            "textAlign": "left"
+          },
+          "action": {
+            "type": "navigate",
+            "target": "question-C"
+          }
+        },
+        {
+          "id": "rx-175",
+          "type": "button",
+          "props": {
+            "label": "D   稳态调节中都有一个调节点"
+          },
+          "style": {
+            "background": "#FFE600",
+            "color": "#000000",
+            "fontSize": 16,
+            "fontWeight": 900,
+            "minHeight": 62,
+            "padding": "14px 16px",
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 10,
+            "boxShadow": "4px 4px 0px #000000",
+            "textAlign": "left"
+          },
+          "action": {
+            "type": "navigate",
+            "target": "question-D"
+          }
+        },
+        {
+          "id": "rx-177",
+          "type": "fixedbar",
+          "props": {
+            "edge": "bottom"
+          },
+          "style": {
+            "gap": 10,
+            "padding": "12px 0 20px"
+          },
+          "children": [
+            {
+              "id": "rx-176",
+              "type": "button",
+              "props": {
+                "label": "提交答案"
+              },
+              "style": {
+                "background": "#FFE600",
+                "color": "#000000",
+                "fontSize": 16,
+                "fontWeight": 800,
+                "minHeight": 52,
+                "padding": "12px 14px",
+                "borderWidth": 3,
+                "borderColor": "#000000",
+                "borderRadius": 10,
+                "boxShadow": "3px 3px 0px #000000"
+              },
+              "action": {
+                "type": "navigate",
+                "target": "analysis-D"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "analysis-A",
+      "name": "解析 · 答对",
+      "nodes": [
+        {
+          "id": "rx-178",
+          "type": "navbar",
+          "props": {
+            "title": "答案解析",
+            "back": true
+          },
+          "style": {
+            "padding": 0,
+            "minHeight": 48,
+            "fontWeight": 900
+          },
+          "action": {
+            "type": "back"
+          }
+        },
+        {
+          "id": "rx-182",
+          "type": "card",
+          "props": {},
+          "style": {
+            "background": "#B9F6B0",
+            "padding": 18,
+            "gap": 12,
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 12,
+            "boxShadow": "4px 4px 0px #000000"
+          },
+          "children": [
+            {
+              "id": "rx-179",
+              "type": "badge",
+              "props": {
+                "text": "回答正确"
+              },
+              "style": {
+                "background": "#FFFFFF",
+                "color": "#000000",
+                "fontWeight": 800,
+                "fontSize": 12,
+                "padding": "5px 10px",
+                "borderRadius": 6
+              }
+            },
+            {
+              "id": "rx-180",
+              "type": "text",
+              "props": {
+                "text": "拿下这一题！",
+                "variant": "heading"
+              },
+              "style": {
+                "fontSize": 28,
+                "fontWeight": 900
+              }
+            },
+            {
+              "id": "rx-181",
+              "type": "text",
+              "props": {
+                "text": "你的答案 A   /   正确答案 A",
+                "variant": "body"
+              },
+              "style": {
+                "fontSize": 16,
+                "fontWeight": 800
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-186",
+          "type": "card",
+          "props": {},
+          "style": {
+            "background": "#FFFFFF",
+            "padding": 18,
+            "gap": 12,
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 12,
+            "boxShadow": "4px 4px 0px #000000"
+          },
+          "children": [
+            {
+              "id": "rx-183",
+              "type": "text",
+              "props": {
+                "text": "题目回顾 · A1",
+                "variant": "eyebrow"
+              },
+              "style": {
+                "fontSize": 12,
+                "fontWeight": 800
+              }
+            },
+            {
+              "id": "rx-184",
+              "type": "text",
+              "props": {
+                "text": "下列关于机体内环境稳态的描述，错误的是",
+                "variant": "body"
+              },
+              "style": {
+                "fontSize": 18,
+                "fontWeight": 800
+              }
+            },
+            {
+              "id": "rx-185",
+              "type": "text",
+              "props": {
+                "text": "正确答案 A：稳态是指细胞内液理化性质相对恒定",
+                "variant": "body"
+              },
+              "style": {
+                "fontSize": 16,
+                "fontWeight": 700
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-189",
+          "type": "card",
+          "props": {},
+          "style": {
+            "background": "#FFFFFF",
+            "padding": 18,
+            "gap": 12,
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 12,
+            "boxShadow": "4px 4px 0px #000000"
+          },
+          "children": [
+            {
+              "id": "rx-187",
+              "type": "badge",
+              "props": {
+                "text": "解析"
+              },
+              "style": {
+                "background": "#4DEEEA",
+                "color": "#000000",
+                "fontWeight": 800,
+                "fontSize": 12,
+                "padding": "5px 10px",
+                "borderRadius": 6
+              }
+            },
+            {
+              "id": "rx-188",
+              "type": "text",
+              "props": {
+                "text": "稳态为机体内环境即细胞外液（A错，为本题正确答案）理化性质和各种液体成分的相对恒定。内环境稳态的维持是机体自我调节的结果（C对），稳态并非固定不变，而是可在一定范围内保持动态平衡（B对）。维持稳态最重要的调节方式是负反馈调节，负反馈调节都有一个调定点（D对）。",
+                "variant": "body"
+              },
+              "style": {
+                "fontSize": 16,
+                "fontWeight": 500
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-190",
+          "type": "accordion",
+          "props": {
+            "title": "查看课本出处",
+            "description": "（P8）“由于体内细胞直接接触的环境就是细胞外液，所以生理学中通常把细胞外液称之为内环境”（P9）“内环境的稳态是指内环境的理化性质，如温度、酸碱度、渗透压和各种液体成分的相对恒定状态”（A错，为本题正确答案）。（P9）“内环境的稳态并不是静止不变的固定状态，而是各种理化因素在各种生理活动的调节下达到动态平衡的一种相对恒定的状态”（B对）。（P9）“稳态的维持是机体自我调节的结果”（C对）。（P12）“机体的各种生理活动都有一个相应的调定点”（D对）。",
+            "open": false
+          },
+          "style": {
+            "fontSize": 16,
+            "borderWidth": 3,
+            "boxShadow": "none"
+          }
+        },
+        {
+          "id": "rx-191",
+          "type": "text",
+          "props": {
+            "text": "第一章 绪论 · 内环境与稳态",
+            "variant": "body"
+          },
+          "style": {
+            "fontSize": 12,
+            "fontWeight": 600
+          }
+        },
+        {
+          "id": "rx-193",
+          "type": "fixedbar",
+          "props": {
+            "edge": "bottom"
+          },
+          "style": {
+            "gap": 10,
+            "padding": "12px 0 20px"
+          },
+          "children": [
+            {
+              "id": "rx-192",
+              "type": "button",
+              "props": {
+                "label": "下一题  →"
+              },
+              "style": {
+                "background": "#FFE600",
+                "color": "#000000",
+                "fontSize": 16,
+                "fontWeight": 800,
+                "minHeight": 52,
+                "padding": "12px 14px",
+                "borderWidth": 3,
+                "borderColor": "#000000",
+                "borderRadius": 10,
+                "boxShadow": "3px 3px 0px #000000"
+              },
+              "action": {
+                "type": "navigate",
+                "target": "question"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "analysis-B",
+      "name": "解析 · 选 B",
+      "nodes": [
+        {
+          "id": "rx-194",
+          "type": "navbar",
+          "props": {
+            "title": "答案解析",
+            "back": true
+          },
+          "style": {
+            "padding": 0,
+            "minHeight": 48,
+            "fontWeight": 900
+          },
+          "action": {
+            "type": "back"
+          }
+        },
+        {
+          "id": "rx-198",
+          "type": "card",
+          "props": {},
+          "style": {
+            "background": "#FF5E7E",
+            "padding": 18,
+            "gap": 12,
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 12,
+            "boxShadow": "4px 4px 0px #000000"
+          },
+          "children": [
+            {
+              "id": "rx-195",
+              "type": "badge",
+              "props": {
+                "text": "这题值得再看一遍"
+              },
+              "style": {
+                "background": "#FFFFFF",
+                "color": "#000000",
+                "fontWeight": 800,
+                "fontSize": 12,
+                "padding": "5px 10px",
+                "borderRadius": 6
+              }
+            },
+            {
+              "id": "rx-196",
+              "type": "text",
+              "props": {
+                "text": "差一点，再理清它。",
+                "variant": "heading"
+              },
+              "style": {
+                "fontSize": 28,
+                "fontWeight": 900
+              }
+            },
+            {
+              "id": "rx-197",
+              "type": "text",
+              "props": {
+                "text": "你的答案 B   /   正确答案 A",
+                "variant": "body"
+              },
+              "style": {
+                "fontSize": 16,
+                "fontWeight": 800
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-202",
+          "type": "card",
+          "props": {},
+          "style": {
+            "background": "#FFFFFF",
+            "padding": 18,
+            "gap": 12,
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 12,
+            "boxShadow": "4px 4px 0px #000000"
+          },
+          "children": [
+            {
+              "id": "rx-199",
+              "type": "text",
+              "props": {
+                "text": "题目回顾 · A1",
+                "variant": "eyebrow"
+              },
+              "style": {
+                "fontSize": 12,
+                "fontWeight": 800
+              }
+            },
+            {
+              "id": "rx-200",
+              "type": "text",
+              "props": {
+                "text": "下列关于机体内环境稳态的描述，错误的是",
+                "variant": "body"
+              },
+              "style": {
+                "fontSize": 18,
+                "fontWeight": 800
+              }
+            },
+            {
+              "id": "rx-201",
+              "type": "text",
+              "props": {
+                "text": "正确答案 A：稳态是指细胞内液理化性质相对恒定",
+                "variant": "body"
+              },
+              "style": {
+                "fontSize": 16,
+                "fontWeight": 700
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-205",
+          "type": "card",
+          "props": {},
+          "style": {
+            "background": "#FFFFFF",
+            "padding": 18,
+            "gap": 12,
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 12,
+            "boxShadow": "4px 4px 0px #000000"
+          },
+          "children": [
+            {
+              "id": "rx-203",
+              "type": "badge",
+              "props": {
+                "text": "解析"
+              },
+              "style": {
+                "background": "#4DEEEA",
+                "color": "#000000",
+                "fontWeight": 800,
+                "fontSize": 12,
+                "padding": "5px 10px",
+                "borderRadius": 6
+              }
+            },
+            {
+              "id": "rx-204",
+              "type": "text",
+              "props": {
+                "text": "稳态为机体内环境即细胞外液（A错，为本题正确答案）理化性质和各种液体成分的相对恒定。内环境稳态的维持是机体自我调节的结果（C对），稳态并非固定不变，而是可在一定范围内保持动态平衡（B对）。维持稳态最重要的调节方式是负反馈调节，负反馈调节都有一个调定点（D对）。",
+                "variant": "body"
+              },
+              "style": {
+                "fontSize": 16,
+                "fontWeight": 500
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-206",
+          "type": "accordion",
+          "props": {
+            "title": "查看课本出处",
+            "description": "（P8）“由于体内细胞直接接触的环境就是细胞外液，所以生理学中通常把细胞外液称之为内环境”（P9）“内环境的稳态是指内环境的理化性质，如温度、酸碱度、渗透压和各种液体成分的相对恒定状态”（A错，为本题正确答案）。（P9）“内环境的稳态并不是静止不变的固定状态，而是各种理化因素在各种生理活动的调节下达到动态平衡的一种相对恒定的状态”（B对）。（P9）“稳态的维持是机体自我调节的结果”（C对）。（P12）“机体的各种生理活动都有一个相应的调定点”（D对）。",
+            "open": false
+          },
+          "style": {
+            "fontSize": 16,
+            "borderWidth": 3,
+            "boxShadow": "none"
+          }
+        },
+        {
+          "id": "rx-207",
+          "type": "text",
+          "props": {
+            "text": "第一章 绪论 · 内环境与稳态",
+            "variant": "body"
+          },
+          "style": {
+            "fontSize": 12,
+            "fontWeight": 600
+          }
+        },
+        {
+          "id": "rx-209",
+          "type": "fixedbar",
+          "props": {
+            "edge": "bottom"
+          },
+          "style": {
+            "gap": 10,
+            "padding": "12px 0 20px"
+          },
+          "children": [
+            {
+              "id": "rx-208",
+              "type": "button",
+              "props": {
+                "label": "下一题  →"
+              },
+              "style": {
+                "background": "#FFE600",
+                "color": "#000000",
+                "fontSize": 16,
+                "fontWeight": 800,
+                "minHeight": 52,
+                "padding": "12px 14px",
+                "borderWidth": 3,
+                "borderColor": "#000000",
+                "borderRadius": 10,
+                "boxShadow": "3px 3px 0px #000000"
+              },
+              "action": {
+                "type": "navigate",
+                "target": "question"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "analysis-C",
+      "name": "解析 · 选 C",
+      "nodes": [
+        {
+          "id": "rx-210",
+          "type": "navbar",
+          "props": {
+            "title": "答案解析",
+            "back": true
+          },
+          "style": {
+            "padding": 0,
+            "minHeight": 48,
+            "fontWeight": 900
+          },
+          "action": {
+            "type": "back"
+          }
+        },
+        {
+          "id": "rx-214",
+          "type": "card",
+          "props": {},
+          "style": {
+            "background": "#FF5E7E",
+            "padding": 18,
+            "gap": 12,
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 12,
+            "boxShadow": "4px 4px 0px #000000"
+          },
+          "children": [
+            {
+              "id": "rx-211",
+              "type": "badge",
+              "props": {
+                "text": "这题值得再看一遍"
+              },
+              "style": {
+                "background": "#FFFFFF",
+                "color": "#000000",
+                "fontWeight": 800,
+                "fontSize": 12,
+                "padding": "5px 10px",
+                "borderRadius": 6
+              }
+            },
+            {
+              "id": "rx-212",
+              "type": "text",
+              "props": {
+                "text": "差一点，再理清它。",
+                "variant": "heading"
+              },
+              "style": {
+                "fontSize": 28,
+                "fontWeight": 900
+              }
+            },
+            {
+              "id": "rx-213",
+              "type": "text",
+              "props": {
+                "text": "你的答案 C   /   正确答案 A",
+                "variant": "body"
+              },
+              "style": {
+                "fontSize": 16,
+                "fontWeight": 800
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-218",
+          "type": "card",
+          "props": {},
+          "style": {
+            "background": "#FFFFFF",
+            "padding": 18,
+            "gap": 12,
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 12,
+            "boxShadow": "4px 4px 0px #000000"
+          },
+          "children": [
+            {
+              "id": "rx-215",
+              "type": "text",
+              "props": {
+                "text": "题目回顾 · A1",
+                "variant": "eyebrow"
+              },
+              "style": {
+                "fontSize": 12,
+                "fontWeight": 800
+              }
+            },
+            {
+              "id": "rx-216",
+              "type": "text",
+              "props": {
+                "text": "下列关于机体内环境稳态的描述，错误的是",
+                "variant": "body"
+              },
+              "style": {
+                "fontSize": 18,
+                "fontWeight": 800
+              }
+            },
+            {
+              "id": "rx-217",
+              "type": "text",
+              "props": {
+                "text": "正确答案 A：稳态是指细胞内液理化性质相对恒定",
+                "variant": "body"
+              },
+              "style": {
+                "fontSize": 16,
+                "fontWeight": 700
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-221",
+          "type": "card",
+          "props": {},
+          "style": {
+            "background": "#FFFFFF",
+            "padding": 18,
+            "gap": 12,
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 12,
+            "boxShadow": "4px 4px 0px #000000"
+          },
+          "children": [
+            {
+              "id": "rx-219",
+              "type": "badge",
+              "props": {
+                "text": "解析"
+              },
+              "style": {
+                "background": "#4DEEEA",
+                "color": "#000000",
+                "fontWeight": 800,
+                "fontSize": 12,
+                "padding": "5px 10px",
+                "borderRadius": 6
+              }
+            },
+            {
+              "id": "rx-220",
+              "type": "text",
+              "props": {
+                "text": "稳态为机体内环境即细胞外液（A错，为本题正确答案）理化性质和各种液体成分的相对恒定。内环境稳态的维持是机体自我调节的结果（C对），稳态并非固定不变，而是可在一定范围内保持动态平衡（B对）。维持稳态最重要的调节方式是负反馈调节，负反馈调节都有一个调定点（D对）。",
+                "variant": "body"
+              },
+              "style": {
+                "fontSize": 16,
+                "fontWeight": 500
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-222",
+          "type": "accordion",
+          "props": {
+            "title": "查看课本出处",
+            "description": "（P8）“由于体内细胞直接接触的环境就是细胞外液，所以生理学中通常把细胞外液称之为内环境”（P9）“内环境的稳态是指内环境的理化性质，如温度、酸碱度、渗透压和各种液体成分的相对恒定状态”（A错，为本题正确答案）。（P9）“内环境的稳态并不是静止不变的固定状态，而是各种理化因素在各种生理活动的调节下达到动态平衡的一种相对恒定的状态”（B对）。（P9）“稳态的维持是机体自我调节的结果”（C对）。（P12）“机体的各种生理活动都有一个相应的调定点”（D对）。",
+            "open": false
+          },
+          "style": {
+            "fontSize": 16,
+            "borderWidth": 3,
+            "boxShadow": "none"
+          }
+        },
+        {
+          "id": "rx-223",
+          "type": "text",
+          "props": {
+            "text": "第一章 绪论 · 内环境与稳态",
+            "variant": "body"
+          },
+          "style": {
+            "fontSize": 12,
+            "fontWeight": 600
+          }
+        },
+        {
+          "id": "rx-225",
+          "type": "fixedbar",
+          "props": {
+            "edge": "bottom"
+          },
+          "style": {
+            "gap": 10,
+            "padding": "12px 0 20px"
+          },
+          "children": [
+            {
+              "id": "rx-224",
+              "type": "button",
+              "props": {
+                "label": "下一题  →"
+              },
+              "style": {
+                "background": "#FFE600",
+                "color": "#000000",
+                "fontSize": 16,
+                "fontWeight": 800,
+                "minHeight": 52,
+                "padding": "12px 14px",
+                "borderWidth": 3,
+                "borderColor": "#000000",
+                "borderRadius": 10,
+                "boxShadow": "3px 3px 0px #000000"
+              },
+              "action": {
+                "type": "navigate",
+                "target": "question"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "analysis-D",
+      "name": "解析 · 选 D",
+      "nodes": [
+        {
+          "id": "rx-226",
+          "type": "navbar",
+          "props": {
+            "title": "答案解析",
+            "back": true
+          },
+          "style": {
+            "padding": 0,
+            "minHeight": 48,
+            "fontWeight": 900
+          },
+          "action": {
+            "type": "back"
+          }
+        },
+        {
+          "id": "rx-230",
+          "type": "card",
+          "props": {},
+          "style": {
+            "background": "#FF5E7E",
+            "padding": 18,
+            "gap": 12,
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 12,
+            "boxShadow": "4px 4px 0px #000000"
+          },
+          "children": [
+            {
+              "id": "rx-227",
+              "type": "badge",
+              "props": {
+                "text": "这题值得再看一遍"
+              },
+              "style": {
+                "background": "#FFFFFF",
+                "color": "#000000",
+                "fontWeight": 800,
+                "fontSize": 12,
+                "padding": "5px 10px",
+                "borderRadius": 6
+              }
+            },
+            {
+              "id": "rx-228",
+              "type": "text",
+              "props": {
+                "text": "差一点，再理清它。",
+                "variant": "heading"
+              },
+              "style": {
+                "fontSize": 28,
+                "fontWeight": 900
+              }
+            },
+            {
+              "id": "rx-229",
+              "type": "text",
+              "props": {
+                "text": "你的答案 D   /   正确答案 A",
+                "variant": "body"
+              },
+              "style": {
+                "fontSize": 16,
+                "fontWeight": 800
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-234",
+          "type": "card",
+          "props": {},
+          "style": {
+            "background": "#FFFFFF",
+            "padding": 18,
+            "gap": 12,
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 12,
+            "boxShadow": "4px 4px 0px #000000"
+          },
+          "children": [
+            {
+              "id": "rx-231",
+              "type": "text",
+              "props": {
+                "text": "题目回顾 · A1",
+                "variant": "eyebrow"
+              },
+              "style": {
+                "fontSize": 12,
+                "fontWeight": 800
+              }
+            },
+            {
+              "id": "rx-232",
+              "type": "text",
+              "props": {
+                "text": "下列关于机体内环境稳态的描述，错误的是",
+                "variant": "body"
+              },
+              "style": {
+                "fontSize": 18,
+                "fontWeight": 800
+              }
+            },
+            {
+              "id": "rx-233",
+              "type": "text",
+              "props": {
+                "text": "正确答案 A：稳态是指细胞内液理化性质相对恒定",
+                "variant": "body"
+              },
+              "style": {
+                "fontSize": 16,
+                "fontWeight": 700
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-237",
+          "type": "card",
+          "props": {},
+          "style": {
+            "background": "#FFFFFF",
+            "padding": 18,
+            "gap": 12,
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 12,
+            "boxShadow": "4px 4px 0px #000000"
+          },
+          "children": [
+            {
+              "id": "rx-235",
+              "type": "badge",
+              "props": {
+                "text": "解析"
+              },
+              "style": {
+                "background": "#4DEEEA",
+                "color": "#000000",
+                "fontWeight": 800,
+                "fontSize": 12,
+                "padding": "5px 10px",
+                "borderRadius": 6
+              }
+            },
+            {
+              "id": "rx-236",
+              "type": "text",
+              "props": {
+                "text": "稳态为机体内环境即细胞外液（A错，为本题正确答案）理化性质和各种液体成分的相对恒定。内环境稳态的维持是机体自我调节的结果（C对），稳态并非固定不变，而是可在一定范围内保持动态平衡（B对）。维持稳态最重要的调节方式是负反馈调节，负反馈调节都有一个调定点（D对）。",
+                "variant": "body"
+              },
+              "style": {
+                "fontSize": 16,
+                "fontWeight": 500
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-238",
+          "type": "accordion",
+          "props": {
+            "title": "查看课本出处",
+            "description": "（P8）“由于体内细胞直接接触的环境就是细胞外液，所以生理学中通常把细胞外液称之为内环境”（P9）“内环境的稳态是指内环境的理化性质，如温度、酸碱度、渗透压和各种液体成分的相对恒定状态”（A错，为本题正确答案）。（P9）“内环境的稳态并不是静止不变的固定状态，而是各种理化因素在各种生理活动的调节下达到动态平衡的一种相对恒定的状态”（B对）。（P9）“稳态的维持是机体自我调节的结果”（C对）。（P12）“机体的各种生理活动都有一个相应的调定点”（D对）。",
+            "open": false
+          },
+          "style": {
+            "fontSize": 16,
+            "borderWidth": 3,
+            "boxShadow": "none"
+          }
+        },
+        {
+          "id": "rx-239",
+          "type": "text",
+          "props": {
+            "text": "第一章 绪论 · 内环境与稳态",
+            "variant": "body"
+          },
+          "style": {
+            "fontSize": 12,
+            "fontWeight": 600
+          }
+        },
+        {
+          "id": "rx-241",
+          "type": "fixedbar",
+          "props": {
+            "edge": "bottom"
+          },
+          "style": {
+            "gap": 10,
+            "padding": "12px 0 20px"
+          },
+          "children": [
+            {
+              "id": "rx-240",
+              "type": "button",
+              "props": {
+                "label": "下一题  →"
+              },
+              "style": {
+                "background": "#FFE600",
+                "color": "#000000",
+                "fontSize": 16,
+                "fontWeight": 800,
+                "minHeight": 52,
+                "padding": "12px 14px",
+                "borderWidth": 3,
+                "borderColor": "#000000",
+                "borderRadius": 10,
+                "boxShadow": "3px 3px 0px #000000"
+              },
+              "action": {
+                "type": "navigate",
+                "target": "question"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "search",
+      "name": "搜索题目",
+      "nodes": [
+        {
+          "id": "rx-242",
+          "type": "navbar",
+          "props": {
+            "title": "搜索题目",
+            "back": false
+          },
+          "style": {
+            "padding": 0,
+            "minHeight": 48,
+            "fontWeight": 900
+          }
+        },
+        {
+          "id": "rx-245",
+          "type": "stack",
+          "props": {},
+          "style": {
+            "gap": 6
+          },
+          "children": [
+            {
+              "id": "rx-243",
+              "type": "text",
+              "props": {
+                "text": "一个关键词，\n找到一个考点。",
+                "variant": "heading"
+              },
+              "style": {
+                "fontSize": 28,
+                "fontWeight": 900
+              }
+            },
+            {
+              "id": "rx-244",
+              "type": "text",
+              "props": {
+                "text": "题干和案例子题都能查。",
+                "variant": "body"
+              },
+              "style": {
+                "fontSize": 14,
+                "fontWeight": 500
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-248",
+          "type": "card",
+          "props": {},
+          "style": {
+            "background": "#FFFFFF",
+            "padding": 18,
+            "gap": 12,
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 12,
+            "boxShadow": "4px 4px 0px #000000"
+          },
+          "children": [
+            {
+              "id": "rx-246",
+              "type": "input",
+              "props": {
+                "label": "关键词",
+                "placeholder": "输入题干、考点或关键词",
+                "name": "keyword",
+                "required": true,
+                "value": "内环境"
+              },
+              "style": {
+                "fontSize": 16,
+                "minHeight": 52
+              }
+            },
+            {
+              "id": "rx-247",
+              "type": "button",
+              "props": {
+                "label": "搜索题目  →"
+              },
+              "style": {
+                "background": "#FFE600",
+                "color": "#000000",
+                "fontSize": 16,
+                "fontWeight": 800,
+                "minHeight": 52,
+                "padding": "12px 14px",
+                "borderWidth": 3,
+                "borderColor": "#000000",
+                "borderRadius": 10,
+                "boxShadow": "3px 3px 0px #000000"
+              },
+              "action": {
+                "type": "submit",
+                "target": "search-results"
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-250",
+          "type": "row",
+          "props": {},
+          "style": {
+            "gap": 12,
+            "alignItems": "center",
+            "justifyContent": "space-between"
+          },
+          "children": [
+            {
+              "id": "rx-249",
+              "type": "text",
+              "props": {
+                "text": "可以从这些词开始",
+                "variant": "body"
+              },
+              "style": {
+                "fontSize": 18,
+                "fontWeight": 900
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-255",
+          "type": "grid",
+          "props": {},
+          "style": {
+            "gridTemplateColumns": "repeat(2,minmax(0,1fr))",
+            "gap": 12
+          },
+          "children": [
+            {
+              "id": "rx-251",
+              "type": "button",
+              "props": {
+                "label": "内环境"
+              },
+              "style": {
+                "background": "#4DEEEA",
+                "color": "#000000",
+                "fontSize": 14,
+                "fontWeight": 800,
+                "minHeight": 48,
+                "padding": "12px 14px",
+                "borderWidth": 3,
+                "borderColor": "#000000",
+                "borderRadius": 10,
+                "boxShadow": "3px 3px 0px #000000"
+              },
+              "action": {
+                "type": "navigate",
+                "target": "search-results"
+              }
+            },
+            {
+              "id": "rx-252",
+              "type": "button",
+              "props": {
+                "label": "负反馈"
+              },
+              "style": {
+                "background": "#FF5E7E",
+                "color": "#000000",
+                "fontSize": 14,
+                "fontWeight": 800,
+                "minHeight": 48,
+                "padding": "12px 14px",
+                "borderWidth": 3,
+                "borderColor": "#000000",
+                "borderRadius": 10,
+                "boxShadow": "3px 3px 0px #000000"
+              },
+              "action": {
+                "type": "navigate",
+                "target": "search-results"
+              }
+            },
+            {
+              "id": "rx-253",
+              "type": "button",
+              "props": {
+                "label": "细胞膜"
+              },
+              "style": {
+                "background": "#4DEEEA",
+                "color": "#000000",
+                "fontSize": 14,
+                "fontWeight": 800,
+                "minHeight": 48,
+                "padding": "12px 14px",
+                "borderWidth": 3,
+                "borderColor": "#000000",
+                "borderRadius": 10,
+                "boxShadow": "3px 3px 0px #000000"
+              },
+              "action": {
+                "type": "navigate",
+                "target": "search-results"
+              }
+            },
+            {
+              "id": "rx-254",
+              "type": "button",
+              "props": {
+                "label": "动作电位"
+              },
+              "style": {
+                "background": "#FF5E7E",
+                "color": "#000000",
+                "fontSize": 14,
+                "fontWeight": 800,
+                "minHeight": 48,
+                "padding": "12px 14px",
+                "borderWidth": 3,
+                "borderColor": "#000000",
+                "borderRadius": 10,
+                "boxShadow": "3px 3px 0px #000000"
+              },
+              "action": {
+                "type": "navigate",
+                "target": "search-results"
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-258",
+          "type": "card",
+          "props": {},
+          "style": {
+            "background": "#FFFFFF",
+            "padding": 18,
+            "gap": 12,
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 12,
+            "boxShadow": "4px 4px 0px #000000"
+          },
+          "children": [
+            {
+              "id": "rx-256",
+              "type": "text",
+              "props": {
+                "text": "不必记住完整题干。",
+                "variant": "body"
+              },
+              "style": {
+                "fontSize": 20,
+                "fontWeight": 900
+              }
+            },
+            {
+              "id": "rx-257",
+              "type": "text",
+              "props": {
+                "text": "抓住一个关键词，把相关知识连起来。",
+                "variant": "body"
+              },
+              "style": {
+                "fontSize": 14,
+                "fontWeight": 500
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-259",
+          "type": "bottomnav",
+          "props": {
+            "label": "主导航",
+            "options": "首页|刷题|科目|搜索",
+            "pageTargets": "home|setup|subjects|search",
+            "placement": "fixed"
+          },
+          "style": {
+            "minHeight": 74,
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 10,
+            "boxShadow": "3px 3px 0px #000000",
+            "padding": "8px 12px 11px",
+            "gap": 10,
+            "fontSize": 12,
+            "fontWeight": 800,
+            "background": "#FFFBEB"
+          }
+        }
+      ]
+    },
+    {
+      "id": "search-results",
+      "name": "搜索结果",
+      "nodes": [
+        {
+          "id": "rx-260",
+          "type": "navbar",
+          "props": {
+            "title": "搜索结果",
+            "back": true
+          },
+          "style": {
+            "padding": 0,
+            "minHeight": 48,
+            "fontWeight": 900
+          },
+          "action": {
+            "type": "back"
+          }
+        },
+        {
+          "id": "rx-263",
+          "type": "stack",
+          "props": {},
+          "style": {
+            "gap": 6
+          },
+          "children": [
+            {
+              "id": "rx-261",
+              "type": "text",
+              "props": {
+                "text": "关于「内环境」",
+                "variant": "heading"
+              },
+              "style": {
+                "fontSize": 28,
+                "fontWeight": 900
+              }
+            },
+            {
+              "id": "rx-262",
+              "type": "text",
+              "props": {
+                "text": "先看题干，再打开完整题目。",
+                "variant": "body"
+              },
+              "style": {
+                "fontSize": 14,
+                "fontWeight": 500
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-264",
+          "type": "badge",
+          "props": {
+            "text": "生理学 · 相关题目"
+          },
+          "style": {
+            "background": "#FFE600",
+            "color": "#000000",
+            "fontWeight": 800,
+            "fontSize": 12,
+            "padding": "5px 10px",
+            "borderRadius": 6
+          }
+        },
+        {
+          "id": "rx-268",
+          "type": "card",
+          "props": {},
+          "style": {
+            "background": "#FFFFFF",
+            "padding": 18,
+            "gap": 12,
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 12,
+            "boxShadow": "4px 4px 0px #000000"
+          },
+          "children": [
+            {
+              "id": "rx-265",
+              "type": "badge",
+              "props": {
+                "text": "A1 · 单选"
+              },
+              "style": {
+                "background": "#4DEEEA",
+                "color": "#000000",
+                "fontWeight": 800,
+                "fontSize": 12,
+                "padding": "5px 10px",
+                "borderRadius": 6
+              }
+            },
+            {
+              "id": "rx-266",
+              "type": "text",
+              "props": {
+                "text": "机体的内环境是指",
+                "variant": "body"
+              },
+              "style": {
+                "fontSize": 18,
+                "fontWeight": 800
+              }
+            },
+            {
+              "id": "rx-267",
+              "type": "button",
+              "props": {
+                "label": "打开这道题  →"
+              },
+              "style": {
+                "background": "#FFFFFF",
+                "color": "#000000",
+                "fontSize": 14,
+                "fontWeight": 800,
+                "minHeight": 48,
+                "padding": "12px 14px",
+                "borderWidth": 3,
+                "borderColor": "#000000",
+                "borderRadius": 10,
+                "boxShadow": "none"
+              },
+              "action": {
+                "type": "navigate",
+                "target": "question"
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-272",
+          "type": "card",
+          "props": {},
+          "style": {
+            "background": "#FFFFFF",
+            "padding": 18,
+            "gap": 12,
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 12,
+            "boxShadow": "4px 4px 0px #000000"
+          },
+          "children": [
+            {
+              "id": "rx-269",
+              "type": "badge",
+              "props": {
+                "text": "A1 · 单选"
+              },
+              "style": {
+                "background": "#4DEEEA",
+                "color": "#000000",
+                "fontWeight": 800,
+                "fontSize": 12,
+                "padding": "5px 10px",
+                "borderRadius": 6
+              }
+            },
+            {
+              "id": "rx-270",
+              "type": "text",
+              "props": {
+                "text": "下列关于人体内环境的概念，叙述错误的是",
+                "variant": "body"
+              },
+              "style": {
+                "fontSize": 18,
+                "fontWeight": 800
+              }
+            },
+            {
+              "id": "rx-271",
+              "type": "button",
+              "props": {
+                "label": "打开这道题  →"
+              },
+              "style": {
+                "background": "#FFFFFF",
+                "color": "#000000",
+                "fontSize": 14,
+                "fontWeight": 800,
+                "minHeight": 48,
+                "padding": "12px 14px",
+                "borderWidth": 3,
+                "borderColor": "#000000",
+                "borderRadius": 10,
+                "boxShadow": "none"
+              },
+              "action": {
+                "type": "navigate",
+                "target": "question"
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-276",
+          "type": "card",
+          "props": {},
+          "style": {
+            "background": "#FFFFFF",
+            "padding": 18,
+            "gap": 12,
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 12,
+            "boxShadow": "4px 4px 0px #000000"
+          },
+          "children": [
+            {
+              "id": "rx-273",
+              "type": "badge",
+              "props": {
+                "text": "A1 · 单选"
+              },
+              "style": {
+                "background": "#4DEEEA",
+                "color": "#000000",
+                "fontWeight": 800,
+                "fontSize": 12,
+                "padding": "5px 10px",
+                "borderRadius": 6
+              }
+            },
+            {
+              "id": "rx-274",
+              "type": "text",
+              "props": {
+                "text": "下列关于机体内环境稳态的描述，错误的是",
+                "variant": "body"
+              },
+              "style": {
+                "fontSize": 18,
+                "fontWeight": 800
+              }
+            },
+            {
+              "id": "rx-275",
+              "type": "button",
+              "props": {
+                "label": "打开这道题  →"
+              },
+              "style": {
+                "background": "#FFFFFF",
+                "color": "#000000",
+                "fontSize": 14,
+                "fontWeight": 800,
+                "minHeight": 48,
+                "padding": "12px 14px",
+                "borderWidth": 3,
+                "borderColor": "#000000",
+                "borderRadius": 10,
+                "boxShadow": "none"
+              },
+              "action": {
+                "type": "navigate",
+                "target": "question"
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx-277",
+          "type": "bottomnav",
+          "props": {
+            "label": "主导航",
+            "options": "首页|刷题|科目|搜索",
+            "pageTargets": "home|setup|subjects|search",
+            "placement": "fixed"
+          },
+          "style": {
+            "minHeight": 74,
+            "borderWidth": 3,
+            "borderColor": "#000000",
+            "borderRadius": 10,
+            "boxShadow": "3px 3px 0px #000000",
+            "padding": "8px 12px 11px",
+            "gap": 10,
+            "fontSize": 12,
+            "fontWeight": 800,
+            "background": "#FFFBEB"
+          }
+        }
+      ]
+    }
+  ]
+}

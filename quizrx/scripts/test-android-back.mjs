@@ -1,0 +1,23 @@
+import assert from 'node:assert/strict';
+import {primaryRouteFor, registerAndroidBackGuard, canLeaveOnAndroidBack} from '../src/lib/androidBack.ts';
+
+assert.equal(primaryRouteFor('/subjects/4', ''), '/subjects');
+assert.equal(primaryRouteFor('/quiz/session', '?session=1'), '/quiz');
+assert.equal(primaryRouteFor('/quiz/session', '?session=1&returnTo=obe'), '/quiz?source=OBE大纲');
+assert.equal(primaryRouteFor('/quiz/session', '?question=10&returnTo=%2Fsearch'), '/search');
+assert.equal(primaryRouteFor('/quiz/session', '?question=10&returnTo=%2F'), '/');
+assert.equal(primaryRouteFor('/quiz/session', '?returnTo=https://example.com'), '/quiz');
+assert.equal(primaryRouteFor('/collection', '?kind=mistakes'), '/');
+assert.equal(await canLeaveOnAndroidBack(), true);
+let finishSave;
+const pending = new Promise(resolve => { finishSave = resolve; });
+const unregister = registerAndroidBackGuard(async () => { await pending; return false; });
+let finished = false;
+const back = canLeaveOnAndroidBack().then(result => { finished = true; return result; });
+await Promise.resolve();
+assert.equal(finished, false, 'Back must wait for draft writes');
+finishSave();
+assert.equal(await back, false, 'Failed saves must keep the question page');
+unregister();
+assert.equal(await canLeaveOnAndroidBack(), true);
+console.log('Android back routes and asynchronous leave guards passed.');

@@ -1,0 +1,71 @@
+{
+  "total": 51551,
+  "original_retained": 51281,
+  "obe": 270,
+  "chapters": [
+    [
+      "绪论",
+      30,
+      21,
+      9
+    ],
+    [
+      "第一章 头部",
+      30,
+      21,
+      9
+    ],
+    [
+      "第二章 颈部",
+      30,
+      21,
+      9
+    ],
+    [
+      "第三章 胸部",
+      30,
+      21,
+      9
+    ],
+    [
+      "第四章 腹部",
+      30,
+      21,
+      9
+    ],
+    [
+      "第五章 盆部与会阴",
+      30,
+      21,
+      9
+    ],
+    [
+      "第六章 脊柱区",
+      30,
+      21,
+      9
+    ],
+    [
+      "第七章 上肢",
+      30,
+      21,
+      9
+    ],
+    [
+      "第八章 下肢",
+      30,
+      21,
+      9
+    ]
+  ],
+  "original_rows_missing": {
+    "questions": 0,
+    "options": 0,
+    "sub_questions": 0,
+    "sub_options": 0,
+    "units": 0
+  },
+  "fts_verified": 270,
+  "backup": "D:\\repo\\ykb_copyer\\.processor_runs\\20261014T045955328985Z-1a362839\\backup-quizbank.db",
+  "bank_sha256": "05cae76f18677fa2ea796439f58f8c1c82cff49bfd53f55c0a447a5e4c010434"
+}

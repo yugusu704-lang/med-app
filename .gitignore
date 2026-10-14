@@ -1,0 +1,10 @@
+*.db
+*.apk
+*.pyc
+__pycache__/
+node_modules/
+dist/
+target/
+.processor_runs/
+*.jks
+*.keystore

@@ -1,0 +1,8 @@
+{
+  "apk_size": 103052033,
+  "apk_sha256": "24c68d53dab59a695bbf5522b08af3caebf897d927eeaa2b995c4e6cfbf153c2",
+  "bank_sha256": "05cae76f18677fa2ea796439f58f8c1c82cff49bfd53f55c0a447a5e4c010434",
+  "native_libraries": [
+    "lib/arm64-v8a/libquizrx_lib.so"
+  ]
+}

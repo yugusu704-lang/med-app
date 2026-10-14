@@ -1,0 +1,159 @@
+{
+  "chapters": [
+    {
+      "chapter": "绪论",
+      "count": 30,
+      "types": {
+        "A1型题": 21,
+        "A2型题": 9
+      },
+      "answers": {
+        "C": 6,
+        "A": 6,
+        "E": 6,
+        "B": 6,
+        "D": 6
+      },
+      "file": "C:\\Users\\long\\Desktop\\MedBrain\\MedBrain-Vault\\50_AI草稿\\局部解剖学\\绪论-题库.json"
+    },
+    {
+      "chapter": "第一章-头部",
+      "count": 30,
+      "types": {
+        "A1型题": 21,
+        "A2型题": 9
+      },
+      "answers": {
+        "E": 6,
+        "B": 6,
+        "D": 6,
+        "A": 6,
+        "C": 6
+      },
+      "file": "C:\\Users\\long\\Desktop\\MedBrain\\MedBrain-Vault\\50_AI草稿\\局部解剖学\\第一章-头部-题库.json"
+    },
+    {
+      "chapter": "第二章-颈部",
+      "count": 30,
+      "types": {
+        "A1型题": 21,
+        "A2型题": 9
+      },
+      "answers": {
+        "C": 6,
+        "D": 6,
+        "B": 6,
+        "E": 6,
+        "A": 6
+      },
+      "file": "C:\\Users\\long\\Desktop\\MedBrain\\MedBrain-Vault\\50_AI草稿\\局部解剖学\\第二章-颈部-题库.json"
+    },
+    {
+      "chapter": "第三章-胸部",
+      "count": 30,
+      "types": {
+        "A1型题": 21,
+        "A2型题": 9
+      },
+      "answers": {
+        "E": 6,
+        "D": 6,
+        "C": 6,
+        "B": 6,
+        "A": 6
+      },
+      "file": "C:\\Users\\long\\Desktop\\MedBrain\\MedBrain-Vault\\50_AI草稿\\局部解剖学\\第三章-胸部-题库.json"
+    },
+    {
+      "chapter": "第四章-腹部",
+      "count": 30,
+      "types": {
+        "A1型题": 21,
+        "A2型题": 9
+      },
+      "answers": {
+        "D": 8,
+        "B": 7,
+        "E": 6,
+        "C": 5,
+        "A": 4
+      },
+      "file": "C:\\Users\\long\\Desktop\\MedBrain\\MedBrain-Vault\\50_AI草稿\\局部解剖学\\第四章-腹部-题库.json"
+    },
+    {
+      "chapter": "第五章-盆部与会阴",
+      "count": 30,
+      "types": {
+        "A1型题": 21,
+        "A2型题": 9
+      },
+      "answers": {
+        "E": 7,
+        "B": 8,
+        "D": 6,
+        "A": 6,
+        "C": 3
+      },
+      "file": "C:\\Users\\long\\Desktop\\MedBrain\\MedBrain-Vault\\50_AI草稿\\局部解剖学\\第五章-盆部与会阴-题库.json"
+    },
+    {
+      "chapter": "第六章-脊柱区",
+      "count": 30,
+      "types": {
+        "A1型题": 21,
+        "A2型题": 9
+      },
+      "answers": {
+        "E": 9,
+        "C": 4,
+        "B": 7,
+        "D": 3,
+        "A": 7
+      },
+      "file": "C:\\Users\\long\\Desktop\\MedBrain\\MedBrain-Vault\\50_AI草稿\\局部解剖学\\第六章-脊柱区-题库.json"
+    },
+    {
+      "chapter": "第七章-上肢",
+      "count": 30,
+      "types": {
+        "A1型题": 21,
+        "A2型题": 9
+      },
+      "answers": {
+        "E": 6,
+        "A": 6,
+        "B": 6,
+        "C": 6,
+        "D": 6
+      },
+      "file": "C:\\Users\\long\\Desktop\\MedBrain\\MedBrain-Vault\\50_AI草稿\\局部解剖学\\第七章-上肢-题库.json"
+    },
+    {
+      "chapter": "第八章-下肢",
+      "count": 30,
+      "types": {
+        "A1型题": 21,
+        "A2型题": 9
+      },
+      "answers": {
+        "B": 6,
+        "C": 6,
+        "E": 6,
+        "D": 6,
+        "A": 6
+      },
+      "file": "C:\\Users\\long\\Desktop\\MedBrain\\MedBrain-Vault\\50_AI草稿\\局部解剖学\\第八章-下肢-题库.json"
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "imported": 270,
+  "options": 1350,
+  "import_stats": {
+    "notes": [],
+    "error_samples": [],
+    "unusable_samples": [],
+    "total": 270,
+    "inserted": 270
+  }
+}
