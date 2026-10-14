@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { ArrowLeft, ArrowRight, CheckCircle2, XCircle } from "lucide-react";
+import { ArrowLeft, CheckCircle2, XCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -52,6 +52,24 @@ export function QuizSessionPage() {
     const [busy, setBusy] = useState(false);
     const queue = useRef<Promise<unknown>>(Promise.resolve());
     const saveFailed = useRef(false);
+    const moving = useRef(false);
+    const touch = useRef<{ x: number; y: number } | null>(null);
+    const suppressClick = useRef(false);
+    const [motion, setMotion] = useState<{ direction: "next" | "previous"; phase: "out" | "in" } | null>(null);
+    const mounted = useRef(true);
+    useEffect(() => {
+        mounted.current = true;
+        return () => { mounted.current = false; };
+    }, []);
+    useEffect(() => {
+        if (loading || motion?.phase !== "in") return;
+        const timer = window.setTimeout(() => {
+            moving.current = false;
+            setBusy(false);
+            setMotion(null);
+        }, window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 180);
+        return () => window.clearTimeout(timer);
+    }, [loading, motion]);
     useEffect(() => registerAndroidBackGuard(async () => {
         if (busy) return false;
         await queue.current;
@@ -107,6 +125,8 @@ export function QuizSessionPage() {
         setLoading(true);
         if (id == null) {
             setLoading(false);
+            setBusy(false);
+            moving.current = false;
             return;
         }
         getQuestion(id).then(q => {
@@ -120,6 +140,7 @@ export function QuizSessionPage() {
         }).finally(() => {
             if (alive) {
                 setLoading(false);
+                if (!moving.current) setBusy(false);
             }
         });
         return () => {
@@ -141,10 +162,24 @@ export function QuizSessionPage() {
     // A queued write captures its own position; changing questions waits for that
     // queue, so a delayed result cannot replace a newer question's selection.
     const changePosition = async (delta: number) => {
+        if (!session || busy || loading || moving.current) return;
+        const next = position + delta;
+        if (next < 0 || next >= session.total) return;
+        moving.current = true;
         setBusy(true);
         await queue.current;
-        if (!saveFailed.current) setPosition(p => p + delta);
-        setBusy(false);
+        if (!mounted.current) return;
+        if (saveFailed.current) {
+            moving.current = false;
+            setBusy(false);
+            return;
+        }
+        const direction = delta > 0 ? "next" : "previous";
+        setMotion({ direction, phase: "out" });
+        await new Promise(resolve => window.setTimeout(resolve, 140));
+        if (!mounted.current) return;
+        setMotion({ direction, phase: "in" });
+        setPosition(next);
     };
     const submit = async (answer: SubmittedAnswer) => {
         if (!sessionId) {
@@ -180,7 +215,7 @@ export function QuizSessionPage() {
             setBusy(false);
         }
     };
-    if (loading) {
+    if (loading && !session) {
         return <div className="page">
       <p className="empty-panel">正在加载题目…</p>
     </div>;
@@ -196,19 +231,53 @@ export function QuizSessionPage() {
       <Button variant="outline" onClick={() => navigate("/")}>返回首页</Button>
     </div>;
     }
-    return <div className="page">{error && <p role="alert" className="error-panel">{error}</p>}{quiz ? <QuizQuestion key={quiz.id} quiz={quiz} position={position} total={session?.total ?? 1} record={session?.answers.find(a => a.position === position)} draft={session?.drafts.find(a => a.position === position)?.answer} readOnly={!sessionId} busy={busy} onSave={save} onSubmit={submit}/> : <p className="empty-panel">这道题在当前题库中已不可用，请跳过。</p>}<div className="flex justify-between gap-3">
-    <Button variant="outline" onClick={async () => {
+    return <div className="page">{error && <p role="alert" className="error-panel">{error}</p>}
+    <div className="quiz-swipe-viewport" onPointerDown={() => { suppressClick.current = false; }} onTouchStart={e => {
+        suppressClick.current = false;
+        touch.current = e.touches.length === 1 ? { x: e.touches[0].clientX, y: e.touches[0].clientY } : null;
+    }} onTouchMove={e => {
+        const start = touch.current;
+        if (!start || e.touches.length !== 1) { touch.current = null; return; }
+        const dx = e.touches[0].clientX - start.x;
+        const dy = e.touches[0].clientY - start.y;
+        if (Math.abs(dx) > 20 && Math.abs(dx) > Math.abs(dy) * 1.5) suppressClick.current = true;
+    }} onTouchCancel={() => { touch.current = null; }} onTouchEnd={e => {
+        const start = touch.current;
+        touch.current = null;
+        if (!start || e.touches.length || !e.changedTouches.length) return;
+        const dx = e.changedTouches[0].clientX - start.x;
+        const dy = e.changedTouches[0].clientY - start.y;
+        if (Math.abs(dx) >= 60 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+            suppressClick.current = true;
+            void changePosition(dx < 0 ? 1 : -1);
+        }
+    }} onClickCapture={e => {
+        if (suppressClick.current) { e.preventDefault(); e.stopPropagation(); }
+    }} onKeyDown={e => {
+        if (e.target !== e.currentTarget) return;
+        if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+            e.preventDefault();
+            void changePosition(e.key === "ArrowRight" ? 1 : -1);
+        }
+    }} tabIndex={session ? 0 : undefined} aria-label="答题区域，左滑下一题，右滑上一题">
+    <div className={`quiz-question-panel${motion && !loading ? ` slide-${motion.direction}-${motion.phase}` : ""}`} onAnimationEnd={() => {
+        if (motion?.phase === "in") {
+            moving.current = false;
+            setBusy(false);
+            setMotion(null);
+        }
+    }}>
+    {loading ? <p className="empty-panel">正在加载题目…</p> : quiz ? <QuizQuestion key={quiz.id} quiz={quiz} position={position} total={session?.total ?? 1} record={session?.answers.find(a => a.position === position)} draft={session?.drafts.find(a => a.position === position)?.answer} readOnly={!sessionId} busy={busy} onSave={save} onSubmit={submit}/> : <p className="empty-panel">这道题在当前题库中已不可用，请滑动跳过。</p>}
+    </div></div>
+    {session && <p className="quiz-swipe-hint">左滑下一题 · 右滑上一题{position === 0 ? " · 已是第一题" : position === session.total - 1 ? " · 已是最后一题" : ""}</p>}
+    <div className="flex justify-between gap-3">
+    <Button variant="outline" disabled={busy} onClick={async () => {
             await queue.current;
             if (!saveFailed.current) {
                 navigate("/");
             }
         }}>
-      <ArrowLeft />保存并退出</Button>{session && <Button variant="outline" disabled={busy} onClick={finish}>结束练习</Button>}</div>{session && <div className="flex justify-between gap-3">
-        <Button variant="outline" disabled={position === 0 || busy} onClick={() => changePosition(-1)}>
-          <ArrowLeft />上一题</Button>
-        <Button disabled={position >= session.total - 1 || busy} onClick={() => changePosition(1)}>下一题<ArrowRight />
-        </Button>
-      </div>}</div>;
+      <ArrowLeft />保存并退出</Button>{session && <Button variant="outline" disabled={busy} onClick={finish}>结束练习</Button>}</div></div>;
 }
 function QuizQuestion({ quiz, position, total, record, draft, readOnly, busy, onSave, onSubmit }: {
     quiz: Question;
@@ -224,6 +293,7 @@ function QuizQuestion({ quiz, position, total, record, draft, readOnly, busy, on
     const [bookmarked, setBookmarked] = useState(false);
     const [bookmarkBusy, setBookmarkBusy] = useState(false);
     const [bookmarkError, setBookmarkError] = useState("");
+    const submitting = useRef(false);
     useEffect(() => {
         let active = true;
         const find = async () => {
@@ -268,7 +338,7 @@ function QuizQuestion({ quiz, position, total, record, draft, readOnly, busy, on
     const restored = useMemo(() => ({ selected: toSelection(quiz, record?.answer ?? draft), submitted: !!record || readOnly, correct: record?.correct ?? false, subCorrectness: Object.fromEntries((record?.subCorrectness ?? []).map(s => [s.subId, s.correct])) }), [quiz, record, draft, readOnly]);
     const { selected, submitted, isCorrect, subCorrectness, getShuffled, handleOptionSelect, hasSelection } = useQuizLogic(quiz, restored);
     const select = (label: string, subId?: number) => {
-        if (busy || submitted) return;
+        if (busy || submitted || submitting.current) return;
         handleOptionSelect(label, subId);
         let next: typeof selected;
         if (quiz.type === "A3") {
@@ -281,7 +351,13 @@ function QuizQuestion({ quiz, position, total, record, draft, readOnly, busy, on
         else {
             next = label;
         }
-        onSave(toAnswer(quiz, next));
+        const answer = toAnswer(quiz, next);
+        if (quiz.type === "X" || (quiz.type === "A3" && !answer.subAnswers.every(s => s.selected.length))) {
+            onSave(answer);
+        } else {
+            submitting.current = true;
+            void onSubmit(answer).finally(() => { submitting.current = false; });
+        }
     };
     return <>
     <div className="brand-row">
@@ -294,7 +370,7 @@ function QuizQuestion({ quiz, position, total, record, draft, readOnly, busy, on
           <Badge variant="outline">{quiz.unit}</Badge>{quiz.extractedYear && <Badge variant="outline">{quiz.extractedYear} 年</Badge>}</div>
       </CardHeader>
       <CardContent className="space-y-5">
-        <Button variant="outline" disabled={bookmarkBusy} aria-pressed={bookmarked} onClick={bookmark}>{bookmarked ? "取消收藏" : "收藏这道题"}</Button>{bookmarkError && <p className="error-panel" role="alert">{bookmarkError}</p>}<QuizContent disabled={busy} quiz={quiz} selected={selected} submitted={submitted} subCorrectness={subCorrectness} onSelect={select} getShuffled={getShuffled}/>{!submitted ? <Button className="w-full" disabled={!hasSelection() || busy} onClick={() => onSubmit(toAnswer(quiz, selected))}>{busy ? "正在保存…" : "确认答案"}</Button> : <>{!readOnly && <div className="border-3 rounded-lg p-4 flex items-center gap-2 font-bold" style={{ background: isCorrect ? "#4DEEEA" : "#FF5E7E" }}>{isCorrect ? <CheckCircle2 /> : <XCircle />}{isCorrect ? "回答正确，继续保持！" : "再看一遍解析，把难点练熟。"}</div>}<QuizAnalysis analysis={quiz.analysis}/>
+        <Button variant="outline" disabled={bookmarkBusy} aria-pressed={bookmarked} onClick={bookmark}>{bookmarked ? "取消收藏" : "收藏这道题"}</Button>{bookmarkError && <p className="error-panel" role="alert">{bookmarkError}</p>}<QuizContent disabled={busy} quiz={quiz} selected={selected} submitted={submitted} subCorrectness={subCorrectness} onSelect={select} getShuffled={getShuffled}/>{!submitted ? quiz.type === "X" ? <Button className="w-full" disabled={!hasSelection() || busy} onClick={() => onSubmit(toAnswer(quiz, selected))}>{busy ? "正在保存…" : "确认答案"}</Button> : <p className="text-sm" role="status">{busy ? "正在保存答案…" : quiz.type === "A3" ? "各小题选完后自动判分" : "点击选项即可查看答案与解析"}</p> : <>{!readOnly && <div className="border-3 rounded-lg p-4 flex items-center gap-2 font-bold" style={{ background: isCorrect ? "#4DEEEA" : "#FF5E7E" }}>{isCorrect ? <CheckCircle2 /> : <XCircle />}{isCorrect ? "回答正确，继续保持！" : "再看一遍解析，把难点练熟。"}</div>}<QuizAnalysis analysis={quiz.analysis}/>
         </>}</CardContent>
     </Card>
   </>;
